@@ -1,0 +1,44 @@
+[user]
+name = R6S
+email = ravishraj@gmail.com
+
+[core]
+editor = hx
+autocrlf = input          
+safecrlf = true           
+pager = less -FRX         
+
+[init]
+defaultBranch = main
+
+[push]
+default = current
+
+[pull]
+rebase = true
+
+[credential]
+helper = store
+
+[status]
+branch =true
+showStash = true
+showUntrackedFiles = all
+
+[color]
+ui = auto
+diff = auto
+status = auto
+branch = auto
+
+[help]
+autocorrect = 1
+
+[log]
+abbrevCommit = true
+decorate = true
+graph = true
+
+[fetch]
+prune = true
+
