@@ -1,0 +1,23 @@
+general.import = ["colors.toml"]
+[cursor]
+#unfocused_hollow = false
+
+[env]
+#TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+TERM = "tmux-256color" 
+ [window]
+dynamic_title = true
+opacity = 0.50
+blur = true
+[colors]
+draw_bold_text_with_bright_colors = false
+[font]
+size = 12.53
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+[terminal.shell]
+program = "/usr/bin/tmux"
+

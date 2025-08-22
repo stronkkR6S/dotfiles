@@ -1,0 +1,148 @@
+# Global Configs
+[config]
+version_check = true
+reload_apps = true
+
+#[config.wallpaper]
+#command = "/usr/bin/swww"
+#arguments = ["img", "--transition-type", "center", "--transition-step", "15", "--transition-fps", "60"]
+#set = true
+
+
+[templates.hyprland]
+input_path = '/home/ravish/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+#post_hook = 'hyprctl reload'
+
+[templates.sway]
+input_path = '/home/ravish/.config/matugen/templates/sway-colors.conf'
+output_path = '~/.config/sway/colors.conf'
+post_hook = 'swaymsg reload'
+
+#[templates.kitty]
+#input_path = '/home/ravish/.config/matugen/templates/kitty-colors.conf'
+#output_path = '~/.config/kitty/colors.conf'
+#post_hook = "kitty @ set-colors -a -c ~/.config/kitty/colors.conf"
+
+
+[templates.waybar]
+input_path = '/home/ravish/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+
+# Cava/
+[templates.cava]
+input_path = '/home/ravish/.config/matugen/templates/matugen-cava'
+output_path = '~/.config/cava/config'
+post_hook = 'pkill -USR2 cava'
+
+[templates.yazi]
+input_path = '/home/ravish/.config/matugen/templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+
+
+[templates.alacritty]
+input_path = '/home/ravish/.config/matugen/templates/alacritty.toml'
+output_path = '~/.config/alacritty/colors.toml'
+
+
+[templates.zathura]
+input_path = '/home/ravish/.config/matugen/templates/zathura-colors'
+output_path = '~/.config/zathura/zathurarc'
+#post_hook = 'pkill -SIGUSR1 zathura'
+
+
+
+[templates.gtk3]
+input_path = '/home/ravish/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+#[templates.gtk4]
+#input_path = '/home/ravish/.config/matugen/templates/gtk-colors.css'
+#output_path = '~/.config/gtk-4.0/gtk.css'
+
+
+[templates.qt5ct]
+input_path = '/home/ravish/.config/matugen/templates/qtct-colors.conf'
+output_path = '~/.config/qt5ct/colors/matugen.conf'
+
+[templates.qt6ct]
+input_path = '/home/ravish/.config/matugen/templates/qtct-colors.conf'
+output_path = '~/.config/qt6ct/colors/matugen.conf'
+
+# Kvantum
+[templates.kvantum]
+input_path = '~/.config/matugen/templates/matugen.kvconfig'
+output_path = '~/.config/Kvantum/matugen/matugen.kvconfig'
+
+
+[templates.wlogout]
+input_path = '/home/ravish/.config/matugen/templates/colors.css'
+output_path = '~/.config/wlogout/colors.css'
+
+
+# Swaync
+[templates.swaync]
+input_path = '~/.config/matugen/templates/matugen-swaync.css'
+output_path = '~/.config/swaync/matugen/matugen-swaync.css'
+post_hook = 'swaync-client -rs'
+
+
+[templates.pywalfox]
+input_path = '/home/ravish/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
+
+
+[templates.equibop]
+input_path = '/home/ravish/.config/matugen/templates/midnight-discord.css'
+output_path = '/home/ravish/.config/vesktop/themes/midnight-discord.css'
+
+[templates.rofi]
+input_path = '/home/ravish/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+ #[templates.wallpaper]
+ #input_path = '/home/ravish/.config/matugen/templates/wallpaper'
+ #output_path = '~/.cache/wal/wal'
+ #post_hook = '/home/ravish/script/ss.h'
+
+
+
+[templates.rmpc]
+input_path = '~/.config/matugen/templates/rmpc.ron'
+output_path = '~/.config/rmpc/themes/custom.ron'
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.foot]
+input_path = '~/.config/matugen/templates/matugen-foot.ini'
+output_path = '~/.config/foot/matugen/matugen-foot-colors.ini'
+#post_hook = 'pkill -SIGUSR1 foot'
+
+
+#[templates.wofi]
+# input_path = '/home/ravish/.config/matugen/templates/colors.css'
+ #output_path = '~/.config/wofi/style.css'
+
+
+ [templates.helix]
+ input_path = '~/.config/matugen/templates/helix.toml'
+output_path = '~/.config/helix/themes/helix.toml'
+post_hook = 'pkill -SIGUSR1 hx'
+
+
+[templates.vscode]
+input_path = "~/.config/matugen/templates/hyprlunavsc.json"
+output_path = "~/.vscode/extensions/hyprluna.hyprluna-theme-1.0.2/themes/hyprluna.json"
+
+#[templates.Telegram]
+#input_path = "~/.config/matugen/templates/telegram-colors.tdesktop-theme"
+#output_path = "~/.config/telegram-desktop/themes/material-you.tdesktop-theme"
+
+ [templates.firefox]
+ input_path = '~/.config/matugen/templates/firefox.css'
+output_path = '/home/ravish/.mozilla/firefox/yrk10nyq.default-release/chrome/firefox.css'

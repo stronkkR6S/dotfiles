@@ -1,0 +1,141 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+@import "colors.rasi"
+* {
+    font: "Poppins 12";
+    g-spacing: 10px;
+    g-margin: 0;
+    b-color: #000000FF;
+    fg-color: #FFFFFFFF;
+    fgp-color: #888888FF;
+    b-radius: 8px;
+    g-padding: 8px;
+    hl-color: #FFFFFFB3;
+    hlt-color: #000000FF;
+    alt-color: #111111FF;
+    wbg-color: #000000A6;
+    w-border: 0px solid;
+    w-border-color: #FFFFFFFF;
+    w-padding: 12px;
+    icon-size: 24px;
+    border: 0px;
+}
+
+configuration {
+    modi: "drun";
+    show-icons: true;
+    display-drun: "";
+    no-custom: true;
+    opacity: 0;
+     cycle:              false;
+    transparency: "real";
+    background: transparent;
+
+}
+
+
+
+
+listview {
+    columns: 1;
+    lines: 10;
+    fixed-height: true;
+    fixed-columns: true;
+    cycle: false;
+    scrollbar: true;
+    border: 0px solid;
+    margin: 10px;
+}
+#scrollbar {
+    width: 10px;
+    border: 0;
+    handle-width: 6px;
+    padding: 8;
+    handle-border-radius: 8px;
+    handle-color: @primary;
+
+}
+#window {
+    transparency: "real";
+    width: 550px;
+    border-radius: @primary;
+    background-color: @primary;
+    border: 2px;
+    border-color: @primary;
+    padding: 0px;
+}
+
+
+prompt {
+    text-color: @primary;
+}
+
+#inputbar {
+    children: ["entry"];
+
+    spacing: @primary;
+    background-color:  @primary;
+    border-radius: @primary;
+	text-color: @primary;
+}  
+
+
+#textbox-prompt-colon {
+    expand: false;
+    str: ":";
+    margin: 0px 0.3em 0em 0em;
+    text-color: @primary;
+}
+
+
+entry {
+    placeholder: " Search Apps Here";
+    text-color: @primary;
+    placeholder-color: @surface;
+    background-color: @primary;
+    margin: 8px;
+    text-color: @surface; 
+}
+
+mainbox {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    children: ["inputbar", "listview", "message"];
+}
+
+element {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    border: 0px solid;
+    border-radius: @b-radius;
+    border-color: @b-color;
+    background-color: transparent;
+    text-color: @primary;
+}
+
+element normal.normal {
+	background-color: transparent;
+	text-color: @fg-color;
+}
+
+element alternate.normal {
+	background-color: transparent;
+	text-color: @fg-color;
+}
+
+element selected.active {
+	background-color: transparent;
+	text-color: @primary;
+}
+
+element selected.normal {
+	background-color: @primary;
+	text-color: @hlt-color;
+}
+
+message {
+    background-color: red;
+    border: 0px solid;
+}
+

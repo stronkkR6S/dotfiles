@@ -1,0 +1,181 @@
+@import "colors.css";
+@define-color text            @on_surface;
+@define-color background-alt  alpha(@surface, .4);
+@define-color selected        @primary;
+@define-color hover           alpha(@secondary, .4);
+@define-color urgent          @error;
+@define-color idle            @surface_tint;
+@define-color text2           @tertiary;
+
+* {
+  border: none;
+  font-family: "JetBrainsMono Nerd Font ", "JetBrainsMono NF", monospace;
+  font-size: 14px;
+  min-width: 8px;
+  min-height: 0px;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  font-weight: 600;
+}
+
+window#waybar {
+  background: @background-alt;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 8px;
+  border: 2px solid @selected;
+}
+
+.modules-center {
+  margin: 0px 6px 6px 6px;
+  border-radius: 4px;
+  background: none;
+}
+
+.modules-right {
+  margin: 0px 6px 6px 6px;
+  border-radius: 4px;
+  background: none;
+}
+
+.modules-left {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  margin: 6px 6px 6px 6px;
+  border-radius: 4px;
+  background: none;
+}
+
+tooltip {
+  color: @text;
+  border-radius: 8px;
+  background-color: rgba(40,40,40,.7);
+  text-shadow: none;
+}
+
+tooltip * {
+  color: @text;
+  padding: 4px;
+  font-size: 10px;
+  text-shadow: none;
+}
+
+#custom-sep {
+  color: @idle;
+  margin: 4px 0;
+}
+#custom-updates{
+  padding-right: 4px;
+  color: @text;
+}
+#workspaces {
+  border-radius: 4px;
+  margin: 0 5px 0 0;
+}
+#workspaces button {
+  color: @idle;
+  background: none;
+  padding: 0;
+}
+#workspaces button:hover {
+  color: @hover;
+}
+#workspaces button.active {
+  color: @selected;
+}
+#temperature {
+  color: @text;
+}
+#cpu,
+#battery {
+  margin: 2px 0 -6px 0;
+  color: @text;
+}
+#clock {
+  font-weight: 600;
+  color: @text2;
+}
+
+/*swaync*/
+#custom-swaync{
+  padding-right: 4px;
+  color: @text;
+}
+#custom-swaync.dnd-notification {
+  color: @text;
+  padding-right: 8px;
+}
+#custom-swaync.dnd-none {
+  color: @text;
+  padding-right: 8px;
+}
+#custom-swaync.inhibited-notification {
+  color: @text;
+  padding-right: 8px;
+}
+#custom-swaync.dnd-inhibited-notification {
+  color: @text;
+  padding-right: 8px;
+}
+#custom-swaync.dnd-inhibited-none {
+  color: @text;
+  padding-right: 8px;
+}
+
+/*Tray*/
+#tray>.needs-attention {
+  animation-name: blink-active;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#tray * {
+  font-size:12px;
+  border-radius: 4px;
+  padding: 1px; 
+  color: @text;
+  
+}
+
+#tray * :hover {
+  font-size:12px; 
+  border-radius: 4px;
+  background-color: rgba(40,40,40,.5);
+}
+#custom-dpi {
+  color: @text2;
+}
+#pulseaudio {
+  color: @selected;
+}
+#pulseaudio.muted {
+  color: @urgent;
+}
+#network{
+  padding-right: 4px;
+  color: @text;
+}
+#custom-powermenu {
+  padding-right: 3px; 
+  margin: 8px 0 5px 0;
+  color: @selected;
+}
+
+#backlight {
+   margin: 4px 0 0px 0;
+  color: @text;
+  
+
+}
+ #battery.charging, #battery.plugged {
+   margin: 4px 0px 0px 0;
+   color: @text;
+ }
+
+#power-profiles-daemon{
+  
+  color: @text;
+}

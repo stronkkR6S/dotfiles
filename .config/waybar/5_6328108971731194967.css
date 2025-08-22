@@ -1,0 +1,235 @@
+"@import "colors.css";
+		
+	
+	
+	
+	
+* {
+    border: none;
+    border-radius: 20px;
+    font-family: "JetsBrainMono Nerd Font ";
+    font-weight: bold;
+    font-size: 15px;
+    min-height:0;
+}
+#window{
+    background: @surface;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+window#waybar {
+    background: @surface-alpha;
+}
+
+tooltip {
+    color: @surface;
+    background: #1e1e2e;
+    opacity: 1.0;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #89b4fa;
+}
+
+tooltip label{
+    color: #cdd6f4;
+}
+
+/*---------Workspaces-----------------*/
+#workspaces {
+    background: @surface;
+    margin: 4px 4px;
+    padding: 8px 5px;
+    border-radius: 10px;
+    color: @on_surface;
+    margin-top: 5px;
+}
+#workspaces button {
+    font-weight: bold;
+    padding: 0px 5px;
+    margin: 0px 3px;
+    border-radius: 10px;
+    color: transparent;
+    background: @surface_container_highest;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    font-weight: bold;
+    background-color: @primary;
+    color: @scrim;
+    border-radius: 10px;
+    min-width: 50px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    font-weight: bold;
+    background-color: @tertiary;
+    color: @scrim;
+    border-radius: 10px;
+    min-width: 50px;
+    background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+    font-weight: bold;
+    background-color: @error;
+    color: @scrim;
+    border-radius: 10px;
+    min-width: 50px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+}
+#custom-launch_wofi,
+#custom-swww,
+#idle_inhibitor,
+#window,
+#custom-music,
+#battery,
+#power-profiles-daemon,
+#clock,
+#pulseaudio,
+#pulseaudio.microphone,
+#tray,
+#custom-wvkbd,
+#backlight {
+    background: @surface;
+    opacity: 1.0;
+    padding: 5px 10px;
+    margin: 3px 0px;
+    margin-top: 5px;
+    border: 5px;
+    color: @tertiary;
+}
+
+#idle_inhibitor, #clock, #backlight, #custom-launch_wofi, #custom-music, #pulseaudio{
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 10px;
+}
+
+#custom-wvkbd, #custom-swww, #window, #tray, #custom-power_btn, #pulseaudio.microphone, #battery {
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+} 
+#custom-power_btn, #network, #custom-wayves {
+        padding: 5px 10px;
+	margin: 3px 0px;
+	margin-top: 5px;
+	border: 5px;
+	border-radius:10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-left:10px;
+    color: @primary;
+    background: @surface;
+}
+#custom-power_btn {
+	margin-left: 12px;
+
+}	
+#custom-power_btn:hover {
+    color: @tertiary;
+}
+
+#network:hover {
+    color:@tertiary;
+}   
+
+#window {
+    color:@on_surface;
+    border-left: 0px;
+    background: @surface;
+    border-right: 0px;
+}
+
+#idle_inhibitor {
+    color: @scrim;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+#idle_inhibitor.activated {
+    color: @error;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+#custom-launch_wofi {
+    color: #cdd6f4;
+    margin-left: 5px;
+    padding-left: 10px;
+}
+
+#pulseaudio {
+    color:@error;
+    border-left: 0px;
+    border-right: 0px;
+    padding-left: 10px;
+}
+
+#pulseaudio.microphone {
+    color: @surface_tint;
+    padding-right: 20px;
+    border-left: 0px;
+    border-right: 10px;
+}
+
+#battery {
+   color:@on_tertiary_container;
+   background-color:@on_tertiary_fixed;
+    border-right: 10px;
+}
+
+#battery.charging, #battery.plugged {
+    color: @on_tertiary_container;
+    background-color: @on_tertiary_fixed;
+}
+
+#clock {
+    color:@inverse_primary;
+    margin-right: 10px;
+    border-left: 10px;
+    padding-left: 10px;
+    border-radius: 10px
+}
+
+#custom-swww {
+    color: #cdd6f4;
+    border-right: 10px;
+    border-left: 10px;
+    padding-right: 10px;
+}
+
+#power-profiles-daemon.perfomance {
+    color: @error;
+}
+
+#power-profiles-daemon.balanced {
+    color: @error;
+    padding-right : 15px;
+    padding-left : 10px
+}
+
+#power-profiles-daemon.power-saver {
+    color:@primary_fixed_dim;
+}
+ 
+
+#tray {
+    border-radius: 10px;
+}
+
+
+#clock:hover {
+     color: @error;
+}     
+"
+ content://org.telegram.messenger.provider/media/Telegram/Telegram%20Documents/5_6328108971731194967.css#:~:text=%40import%20%22colors.css,hover%20%7B%0A%20%20%20%20%20color%3A%20%40error%3B%0A%7D

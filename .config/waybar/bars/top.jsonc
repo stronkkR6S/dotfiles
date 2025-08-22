@@ -1,0 +1,364 @@
+{
+  "layer": "top",
+  "position": "left",
+    "margin": "11 0 11 9",
+  "reload_style_on_change": true,
+  "modules-left": [
+    "sway/workspaces",
+    "group/info"
+  ],
+  "sway/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    // "format-icons": {
+    //   "1": "一",
+    //   "2": "二",
+    //   "3": "三",
+    //   "4": "四",
+    //   "5": "五",
+    //   "6": "六",
+    //   "7": "七",
+    //   "8": "八",
+    //   "9": "九",
+    //   "10": "十"
+    // }
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "0"
+      // "10": "१०"
+    }
+  },
+  "group/info": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/dmark",
+      "group/gcpu",
+      "memory",
+      "disk"
+    ]
+  },
+  "custom/dmark": {
+    "format": "",
+    "tooltip": false
+  },
+  "group/gcpu": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/cpu-icon",
+      "custom/cputemp",
+      "cpu"
+    ]
+  },
+  "custom/cpu-icon": {
+    "format": "󰻠",
+    "tooltip": false
+  },
+  "custom/cputemp": {
+    "format": "{}",
+    "exec": "~/.config/waybar/bin/cputemp",
+    "interval": 10,
+    "return-type": "json"
+  },
+  "cpu": {
+    "format": "<b>{usage}󱉸</b>",
+    "on-click": "foot btop"
+  },
+  "memory": {
+    "format": "<b>  \n{:2}󱉸</b>"
+  },
+  "disk": {
+    "interval": 600,
+    "format": "<b> 󰋊 \n{percentage_used}󱉸</b>",
+    "path": "/"
+  },
+  "modules-right": [
+    "custom/recorder",
+    "privacy",
+    "group/brightness",
+    "group/sound",
+    "group/connection",
+    "group/together",
+    "tray",
+    "group/power"
+  ],
+  "custom/recorder": {
+    "format": "{}",
+    "interval": "once",
+    "exec": "echo ''",
+    "tooltip": "false",
+    "exec-if": "pgrep 'wl-screenrec'",
+    "on-click": "recorder",
+    "signal": 4
+  },
+  "privacy": {
+    "orientation": "vertical",
+    "icon-spacing": 4,
+    "icon-size": 14,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ]
+  },
+  "group/brightness": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "backlight",
+      "backlight/slider"
+    ]
+  },
+  "backlight": {
+    "device": "amdgpu_bl0",
+    "format": "{icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+            "on-scroll-up": "/home/ravish/script/brightness.sh set 5%+",
+        "on-scroll-down": "/home/ravish/script/brightness.sh set 5%-",
+
+    "tooltip": false,
+    "tooltip-format": "Brightness: {percent}% ",
+    "smooth-scrolling-threshold": 1
+  },
+  "backlight/slider": {
+    "min": 5,
+    "max": 100,
+    "orientation": "vertical",
+    "device": "amdgpu_bl0"
+  },
+  "group/sound": {
+    "orientation": "inherit",
+    "modules": [
+      "group/audio",
+      "custom/notifications"
+    ]
+  },
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio#mic",
+      "pulseaudio/slider"
+    ]
+  },
+  "group/connection": {
+    "orientation": "inherit",
+    "modules": [
+      "group/network",
+    ]
+  },
+  "group/together": {
+    "orientation": "inherit",
+    "modules": [
+      "group/utils",
+      "clock"
+    ]
+  },
+  "group/utils": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/mark",
+      "custom/weather",
+      "custom/colorpicker",
+      "idle_inhibitor"
+    ]
+  },
+  "group/network": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "network",
+      "network#speed"
+    ]
+  },
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "battery",
+      "power-profiles-daemon"
+    ]
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+        "show-passive-items": true
+
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "tooltip-format": "{volume}% {icon} | {desc}",
+    "format-muted": "󰖁",
+    "format-icons": {
+      "headphones": "󰋌",
+      "handsfree": "󰋌",
+      "headset": "󰋌",
+      "phone": "",
+      "portable": "",
+      "car": " ",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "volume mute",
+    "on-click-middle": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "smooth-scrolling-threshold": 1
+  },
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "tooltip-format": "{volume}% {format_source} ",
+    "on-click": "pactl set-source-mute 0 toggle",
+    "on-scroll-down": "pactl set-source-volume 0 -1%",
+    "on-scroll-up": "pactl set-source-volume 0 +1%"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+  "network": {
+    "format": "{icon}",
+    "format-icons": {
+      "wifi": [
+        "󰤨"
+      ],
+      "ethernet": [
+        "󰈀"
+      ],
+      "disconnected": [
+        "󰖪"
+      ]
+    },
+    "format-wifi": "󰤨",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "format-linked": "󰈁",
+    "tooltip": false,
+    "on-click": "alacritty -e nmtui"
+  },
+  "network#speed": {
+    "format": " {bandwidthDownBits} ",
+    "rotate": 90,
+    "interval": 5,
+    "tooltip-format": "{ipaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)   \n{ipaddr} | {frequency} MHz{icon} ",
+    "tooltip-format-ethernet": "{ifname} 󰈀 \n{ipaddr} | {frequency} MHz{icon} ",
+    "tooltip-format-disconnected": "Not Connected to any type of Network",
+    "tooltip": true,
+    "on-click": "pgrep -x rofi &>/dev/null && notify-send rofi || networkmanager_dmenu"
+  },
+  "battery": {
+    "rotate": 270,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+      "format": "<b>{capacity}  {icon}</b>",
+    "format-charging": "<b>{icon} </b>",
+    "format-full": "<span color='#82A55F'><b>{icon}</b></span>",
+    "format-icons": [
+      "󰁻",
+      "󰁼",
+      "󰁾",
+      "󰂀",
+      "󰂂",
+      "󰁹"
+    ],
+    "tooltip-format": "{timeTo} {capacity} % | {power} W",
+    "interval": 3 
+  },
+  "clock": {
+    "format": "{:%I\n%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "today": "<span color='#a6e3a1'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "<span color='#B37F34'><small></small></span>",
+      "balanced": "<span><small> </small></span>",
+      "power-saver": "<span color='#a6e3a1'><small></small></span>"
+    }
+  },
+  "custom/mark": {
+    "format": "",
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "tooltip-format-activated": "Idle Inhibitor is active",
+    "tooltip-format-deactivated": "Idle Inhibitor is not active",
+    "format-icons": {
+      "activated": "󰔡",
+      "deactivated": "󰔢"
+    }
+  }
+}

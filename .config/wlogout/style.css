@@ -1,0 +1,116 @@
+@import "colors.css";
+
+  * {
+	background-image: none;
+	box-shadow: none;
+}
+
+window {
+	background-color:  transparent;
+}
+
+button {
+  outline-style: none;
+    border-radius: 90px;
+    border-color:  alpha(@secondary, .4);
+	text-decoration-color: #FFFFFF;
+    color: #FFFFFF;
+	background-color: alpha(@surface, .4);
+		border-style: solid;
+	border-width: 0px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 53%;
+	animation: gradient_f 20s ease-in infinite;
+	 transition: all 0.3s ease-in-out;
+
+}
+
+    button:hover {
+    background-color: alpha(@secondary, .5);
+    background-size: 55%;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+
+}
+button:focus, button:active {
+	background-color: alpha(@secondary, .7);
+	outline-style: none;
+    background-size: 55%;
+}
+
+#lock {
+    background-image: image(url("/home/ravish/.config/wlogout/icons/lock.svg"));
+    border-radius: 50px 0px 0px 50px;
+    margin : 170px 0px 120px 0px;
+
+}
+
+#logout {
+    border-radius: 0px 0px 0px 0px;
+    background-image: image(url("/home/ravish/.config/wlogout/icons/logout.svg"));
+    margin : 170px 0px 120px 0px;
+
+}
+
+#suspend {
+    background-image: image(url("/home/ravish/.config/wlogout/icons/suspend.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin : 170px 0px 120px 0px;
+
+}
+
+#hibernate {
+    background-image: image(url("/home/ravish/.config/wlogout/icons/hibernate.png"));
+    margin : 170px 0px 120px 0px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#shutdown {
+    background-image: image(url("/home/ravish/.config/wlogout/icons/shutdown.svg"));
+    margin : 170px 0px 120px 0px;
+      border-radius: 0px 0px 0px 0px;
+
+}
+
+#reboot {
+    background-image: image(url("/home/ravish/.config/wlogout/icons/reboot.png"));
+    border-radius: 0px 50px 50px 0px;
+    margin : 170px 0px 120px 0px;
+
+}
+button:hover#lock {
+    border-radius: 60px;
+margin: 110px 0px 58px 0px;
+}
+
+button:hover#logout,
+button:focus#logout {
+    border-radius: 60px;
+margin: 110px 0px 58px 0px;
+}
+
+button:hover#suspend,
+button:focus#suspend {
+    border-radius: 60px;
+margin: 110px 0px 58px 0px;
+}
+
+button:hover#hibernate,
+button:focus#hibernate {
+    border-radius: 60px;
+margin: 110px 0px 58px 0px;
+}
+
+button:hover#shutdown,
+button:focus#shutdown {
+    border-radius: 60px;
+margin: 110px 0px 58px 0px;
+}
+
+button:hover#reboot,
+button:focus#reboot {
+    border-radius: 60px;
+margin: 110px 0px 58px 0px;
+}
+

@@ -1,0 +1,104 @@
+inherits = "term16_light"
+
+# === Cursor ===
+"ui.cursor" = { fg = "#000000", bg = "#ffffff" }
+"ui.cursor.primary" = { fg = "#000000", bg = "#ffffff" }
+"ui.cursor.secondary" = { fg = "#000000", bg = "#ffffff" }
+"ui.cursor.match" = { fg = "#b8c8da", bg = "#ffffff", modifiers = ["bold"] }
+
+# === Cursorline & Column (Soft Glassy Look) ===
+"ui.cursorline.primary" = { bg = "#0000000A" }
+"ui.cursorline.secondary" = { bg = "#0000000A" }
+"ui.cursorcolumn.primary" = { bg = "#0000000A" }
+"ui.cursorcolumn.secondary" = { bg = "#0000000A" }
+
+# === Line Numbers / Gutter ===
+"ui.gutter" = { fg = "#b8c8da" }
+"ui.gutter.selected" = { bg = "none" }
+"ui.linenr" = { fg = "#b8c8da" }
+"ui.linenr.selected" = { fg = "#cce5ff", modifiers = ["bold"] }
+
+# === Menus / Popups ===
+"ui.menu" = { bg = "#00000010", fg = "#99ccfa" }
+"ui.menu.selected" = { fg = "#003351", bg = "#99ccfa", modifiers = ["bold", "italic"] }
+"ui.menu.scroll" = { fg = "#d1bfe7" }
+"ui.popup" = { bg = "#00000020" }  # Semi-transparent glass popup
+"ui.selection" = { bg = "#ffffff22" }  # Transparent white selection
+
+# === Statusline (Mode Based) ===
+"ui.statusline" = { bg = "#074b72", fg = "#cce5ff" }
+"ui.statusline.inactive" = { fg = "#d4e4f6", bg = "#00000008", modifiers = ["dim"] }
+"ui.statusline.insert" = { fg = "#003351", bg = "#99ccfa", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "#23323f", bg = "#b8c8da", modifiers = ["bold"] }
+
+# === UI Text ===
+"ui.text" = { fg = "#99ccfa" }
+"ui.text.focus" = { fg = "#d4e4f6", modifiers = ["bold"] }
+"ui.help" = { fg = "#d1bfe7" }
+"ui.window" = { fg = "#99ccfa", modifiers = ["bold"] }
+
+# === Virtual Elements ===
+"ui.virtual" = { fg = "#b8c8da" }
+"ui.virtual.indent-guide" = { fg = "#b8c8da", modifiers = ["dim"] }
+"ui.virtual.ruler" = { bg = "#ffffff08" }
+"ui.virtual.wrap" = { fg = "#b8c8da" }
+
+# === Syntax ===
+"comment" = { fg = "#1e3548", modifiers = ["italic", "dim"] }
+"attribute" = "#4e4161"
+"constant" = { fg = "#99ccfa", modifiers = ["bold"] }
+"constant.numeric" = { fg = "#b8c8da", modifiers = ["bold"] }
+"constant.character.escape" = "#394857"
+
+"constructor" = "#99ccfa"
+"function" = "#99ccfa"
+"function.builtin" = { fg = "#b8c8da", modifiers = ["bold"] }
+
+"tag" = { fg = "#394857", modifiers = ["bold"] }
+"type" = "#d1bfe7"
+"type.builtin" = { fg = "#394857", modifiers = ["bold", "italic"] }
+"type.enum.variant" = { fg = "#d1bfe7", modifiers = ["bold"] }
+
+"string" = "#d4e4f6"
+"special" = { fg = "#ffb4ab", modifiers = ["bold"] }
+
+"variable" = { fg = "#99ccfa" }
+"variable.parameter" = { fg = "#cce5ff", modifiers = ["italic"] }
+"variable.other.member" = "#b8c8da"
+
+"keyword" = { fg = "#99ccfa", modifiers = ["bold"] }
+"keyword.control.exception" = { fg = "#690005" }
+"keyword.directive" = { fg = "#99ccfa", modifiers = ["bold", "italic"] }
+"keyword.operator" = { fg = "#b8c8da", modifiers = ["bold"] }
+
+"label" = "#690005"
+"namespace" = { fg = "#394857", modifiers = ["bold"] }
+
+# === Markup ===
+"markup.heading" = { fg = "#99ccfa", modifiers = ["bold", "italic"] }
+"markup.list" = "#ffb4ab"
+"markup.bold" = { fg = "#99ccfa", modifiers = ["bold"] }
+"markup.italic" = { fg = "#394857", modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "#4e4161", modifiers = ["italic", "underlined"] }
+"markup.link.text" = { fg = "#b8c8da", modifiers = ["bold"] }
+"markup.quote" = "#99ccfa"
+"markup.raw" = "#074b72"
+
+# === Diff ===
+"diff.plus" = { fg = "#b8c8da", modifiers = ["bold"] }
+"diff.delta" = { fg = "#99ccfa", modifiers = ["italic"] }
+"diff.minus" = { fg = "#ffb4ab", modifiers = ["bold"] }
+
+# === Diagnostics ===
+"diagnostic.hint" = { underline = { color = "#99ccfa", style = "dashed" } }
+"diagnostic.info" = { underline = { color = "#b8c8da", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "#d1bfe7", style = "curl" } }
+"diagnostic.error" = { underline = { color = "#ffb4ab", style = "curl" } }
+
+# === Logs ===
+"hint" = "#074b72"
+"info" = "#99ccfa"
+"debug" = "#b8c8da"
+"warning" = "#d1bfe7"
+"error" = "#ffb4ab"

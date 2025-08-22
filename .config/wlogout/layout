@@ -1,0 +1,36 @@
+{
+    "label" : "lock",
+    "action" : "paplay /usr/share/sounds/freedesktop/stereo/dialog-information.oga && hyprlock",
+    "text" : "Lock",
+    "keybind" : "l"
+}
+{
+    "label" : "hibernate",
+    "action" : "paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga && loginctl hibernate",
+    "text" : "Hibernate",
+    "keybind" : "h"
+}
+{
+    "label" : "logout",
+    "action" : "paplay /usr/share/sounds/freedesktop/stereo/service-logout.oga && loginctl terminate-user $USER",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "paplay /usr/share/sounds/freedesktop/stereo/service-logout.oga && loginctl poweroff",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
+{
+    "label" : "suspend",
+    "action" : "paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga && loginctl suspend",
+    "text" : "Suspend",
+    "keybind" : "u"
+}
+{
+    "label" : "reboot",
+    "action" : "paplay /usr/share/sounds/freedesktop/stereo/service-login.oga && loginctl reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}

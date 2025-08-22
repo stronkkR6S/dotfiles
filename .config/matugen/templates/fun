@@ -1,0 +1,2 @@
+Sxiv.background: {{colors.background.default.hex}}
+Sxiv.foreground: {{colors.on_primary.default.hex}}

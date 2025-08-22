@@ -1,0 +1,185 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell":true,
+    "height": 15,
+    "modules-left":["custom/power_btn","network","custom/wayves"],
+  
+ "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["clock","tray","power-profiles-daemon","pulseaudio","pulseaudio#microphone","backlight","battery"],
+    
+    "hyprland/window": {
+        "disable-scroll": true,
+        "format": "{}"
+    },
+
+    "custom/launch_wofi": {
+        "format": "",
+        "on-click": "pkill dbus-launch rofi; dbus-launch rofi -show drun",
+        "tooltip": false
+    },
+
+    "network": {
+		"format-disconnected": "󰖪   No Internet",
+		"format-ethernet": "󰈀 100% ",
+		"format-linked": "{ifname} (No IP)",
+		"format-wifi": "   {essid}",
+		"tooltip-format": "Connected to {essid} {ifname} via {gwaddr}",
+		"on-click": "alacritty -e nmtui "
+    },
+
+    "custom/swww": {
+        "format": "",
+        "on-click": "~/.config/hypr/scripts/switcher.sh",
+        "tooltip": false
+    },
+
+    "custom/power_btn": {
+        "format": "  ",
+        "on-click": "sh -c '(wlogout -b 6--protocol layer-shell)' & disown",
+        "tooltip": false
+    },
+
+    "custom/music": {
+        "format": "",
+        "max-length": 10,
+        "on-click": "kitty --session music.session",
+        "tooltip": false
+    },
+ 
+    "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+        "default": "",
+        "performance": "  ",
+        "balanced": "  ",
+        "power-saver": "  "
+                    }
+    },
+
+    "hyprland/workspaces": {
+		"format": "{id}",
+		"format-icons": {
+			"active": " ",
+			"default": " ",
+			"urgent": " "
+		},
+		"on-click": "activate",
+		"on-scroll-down": "hyprctl dispatch workspace e+1",
+		"on-scroll-up": "hyprctl dispatch workspace e-1"
+    },
+    
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+        "show-passive-items": true
+    },
+
+
+"clock": {
+  	"format": "{:%I:%M %p} ",
+  	"format-alt": "{:%A, %B %d, %Y (%I:%M %p)} ",
+  	"tooltip-format": "<tt><small>{calendar}</small></tt>",
+  	"calendar": {
+  		"mode"          : "month",
+  		"mode-mon-col"  : 3,
+  		"weeks-pos"     : "right",
+  		"on-scroll"     : 1,
+  		"on-click-right": "mode",
+  		"format": {
+  			"months":     "<span color='#f9e2af'><b>{}</b></span>",
+  			"days":       "<span color='#89b4af'><b>{}</b></span>",
+  			"weeks":      "<span color='#f9e2af'><b>W{}</b></span>",
+  			"weekdays":   "<span color='#89b4af'><b>{}</b></span>",
+  			"today":      "<span color='#f9e2af'><b><u>{}</u></b></span>"
+  		}
+  	},
+  	"actions": {
+  		"on-click-right": "mode",
+  		"on-click-forward": "tz_up",
+  		"on-click-backward": "tz_down",
+  		"on-scroll-up": "shift_up",
+  		"on-scroll-down": "shift_down"
+  	}
+  },    
+
+    "backlight": {
+        "device": "amdgpu_bl0",
+        "format": "{icon}  {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "/home/ravish/script/brightness.sh set 5%+",
+        "on-scroll-down": "/home/ravish/script/brightness.sh set 5%-",
+        "min-length": 9,
+	"tooltip": false,
+	"on-click-right": "better-control -d"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": " {icon} {capacity}% ",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "on-click-right": "better-control -B",
+	    "interval": 3
+    },
+
+    "pulseaudio": {
+        "format": "{icon}   {volume}%",
+        "format-muted": "",
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "scroll-step": 5,
+	"tooltip": false,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "pamixer --default-source -t",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5,
+	"tooltip": false
+
+    },
+    
+    "custom/wvkbd": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "sh -c '(pkill wvkbd-mobintl || wvkbd-mobintl -L 200)'"
+    },
+ 
+
+"custom/wayves": {
+    "format": "{}",
+    "exec": "python /home/ravish/wayves/wayves.py -o cava -i cava -a cava", 
+    "on-click": "alacritty -e cava"
+ }
+
+}
+

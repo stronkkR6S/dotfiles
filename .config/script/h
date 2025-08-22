@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Kill existing portal processes using full command match
+pkill -f /usr/libexec/xdg-desktop-portal-wlr
+pkill -f /usr/libexec/xdg-desktop-portal
+
+# Wait for them to fully exit
+while pgrep -f xdg-desktop-portal-wlr; do sleep 0.2; done
+while pgrep -f xdg-desktop-portal; do sleep 0.2; done
+
+# Start WLR portal first
+/usr/libexec/xdg-desktop-portal-wlr &
+
+# Give it time to register on D-Bus
+sleep 1
+
+# Start main portal
+/usr/libexec/xdg-desktop-portal &

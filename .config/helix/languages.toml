@@ -1,0 +1,40 @@
+use-grammars = { only = ["bash", "c"] }
+
+[[language]]
+name = "bash"
+scope = "source.shell"
+injection-regex = "(bash|zsh|sh)"
+file-types = [
+  "sh", "bash", "zsh", "zshrc", "bashrc", "bash_profile", "bash_logout", "profile",
+  "zprofile", "zlogin", "zlogout", "zshenv", "zsh-theme", "cshrc", "tcshrc",
+  "bash_aliases", "Renviron", "eclass", "ebuild", "APKBUILD",
+  ".bash_history", ".bash_login", ".bash_logout", ".bash_profile", ".bashrc",
+  ".profile", ".zshenv", ".zlogin", ".zlogout", ".zprofile", ".zshrc", ".zimrc",
+  ".bash_aliases", ".Renviron", ".xprofile", ".xsession", ".xsessionrc",
+  ".yashrc", ".yash_profile", ".hushlogin"
+]
+shebangs = ["sh", "bash", "zsh"]
+comment-token = "#"
+formatter = { command = "shfmt", args = ["-i", "4", "-s"] }
+auto-format = true
+language-servers = ["bash-language-server"]
+indent = { tab-width = 8, unit = "        " }
+
+[[language]]
+name = "c"
+scope = "source.c"
+injection-regex = "c"
+file-types = ["c", "h"]
+roots = ["compile_commands.json", "configure.ac", ".git"]
+language-servers = ["clangd"]
+indent = { tab-width = 4, unit = "    " }
+auto-format = false
+formatter = { command = "clang-format", args = ["-assume-filename", "file.c"] }
+
+[language-server.bash-language-server]
+command = "bash-language-server"
+args = ["start"]
+
+[language-server.clangd]
+command = "clangd"
+args = ["--header-insertion=never"]

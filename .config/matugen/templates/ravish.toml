@@ -1,0 +1,104 @@
+inherits = "term16_light"
+
+"ui.background.separator" = { bg = "{{colors.primary.default.hex}}" }
+"ui.cursor" = { fg = "FFFFFF", bg = "#FFFFFF" }
+"ui.cursor.match" = { fg = "#000000", bg = "#FFFFFF" }
+"ui.cursor.primary" = { fg = "#000000", bg = "#FFFFFF" }
+"ui.cursor.secondary" = { fg = "#000000", bg = "#FFFFFF" }
+
+
+"ui.cursorline.primary" = { bg = "{{colors.secondary_container.default.hex}}" }
+"ui.cursorline.secondary" = { bg = "{{colors.secondary_container.default.hex}}" }
+
+"ui.cursorcolumn.primary" = { bg = "{{colors.secondary_container.default.hex}}" }
+"ui.cursorcolumn.secondary" = { bg = "{{colors.secondary_container.default.hex}}" }
+
+"ui.gutter" = { fg = "{{colors.secondary.default.hex}}" }
+"ui.gutter.selected" = { bg = "none" }
+
+ "ui.linenr" = { fg = "{{colors.secondary.default.hex}}" }
+# "ui.linenr.selected" = { fg = "{{colors.on_primary_container.default.hex}}", modifiers = ["bold"] }
+"ui.linenr.selected" = { fg = "#FFFFFF", modifiers = ["bold"] }  # white or any color you want
+# "ui.gutter.selected" = { bg = "none" }
+
+"ui.menu" = { bg = "{{colors.surface.default.hex}}" }
+"ui.menu.selected" = { fg = "{{colors.on_primary.default.hex}}", bg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"ui.menu.scroll" = { fg = "{{colors.secondary_fixed.default.hex}}" }
+
+"ui.help" = { fg = "{{colors.primary.default.hex}}" }
+"ui.text" = { fg = "{{colors.primary.default.hex}}" }
+"ui.text.focus" = { fg = "{{colors.on_secondary_container.default.hex}}" }
+
+"ui.popup" = { bg = "{{colors.surface.default.hex}}" }
+"ui.selection" = { bg = "{{colors.secondary_container.default.hex}}" }
+
+"ui.statusline" = { bg = "{{colors.primary_container.default.hex}}" }
+"ui.statusline.inactive" = { fg = "{{colors.secondary_fixed.default.hex}}", modifiers = ["underlined"] }
+"ui.statusline.insert" = { fg = "{{colors.on_primary.default.hex}}", bg = "{{colors.primary.default.hex}}" }
+"ui.statusline.select" = { fg = "{{colors.on_secondary.default.hex}}", bg = "{{colors.secondary.default.hex}}" }
+
+"ui.virtual" = { fg = "{{colors.secondary.default.hex}}" }
+"ui.virtual.indent-guide" = { fg = "{{colors.tertiary.default.hex}}", modifiers = ["dim"] }
+"ui.virtual.ruler" = { bg = "{{colors.secondary_container.default.hex}}" }
+"ui.virtual.wrap" = { fg = "{{colors.secondary.default.hex}}" }
+
+"ui.window" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+
+# Syntax (High visibility for warm theme)
+
+"comment" = { fg = "{{colors.source_color.default.hex}}", modifiers = ["bold"] }
+
+"attribute" = "{{colors.primary.default.hex}}"
+"constant" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"constant.numeric" = { fg = "{{colors.secondary.default.hex}}", modifiers = ["bold"] }
+"constant.character.escape" = "{{colors.secondary_container.default.hex}}"
+
+"constructor" = "{{colors.primary.default.hex}}"
+"function" = "{{colors.primary.default.hex}}"
+"function.builtin" = { fg = "{{colors.secondary.default.hex}}", modifiers = ["bold"] }
+
+"tag" = { fg = "{{colors.secondary_container.default.hex}}", modifiers = ["bold"] }
+"type" = "{{colors.tertiary.default.hex}}"
+"type.builtin" = { fg = "{{colors.secondary_container.default.hex}}", modifiers = ["bold"] }
+"type.enum.variant" = { fg = "{{colors.tertiary.default.hex}}", modifiers = ["bold"] }
+
+"string" = "{{colors.secondary_fixed.default.hex}}"
+"special" = "{{colors.error.default.hex}}"
+
+"variable" = { fg = "{{colors.primary.default.hex}}" }
+"variable.parameter" = { fg = "{{colors.on_primary_container.default.hex}}", modifiers = ["italic"] }
+"variable.other.member" = "{{colors.secondary.default.hex}}"
+
+"keyword" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"keyword.control.exception" = { fg = "{{colors.on_error.default.hex}}" }
+"keyword.directive" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"keyword.operator" = { fg = "{{colors.secondary.default.hex}}", modifiers = ["bold"] }
+
+"label" = "{{colors.on_error.default.hex}}"
+"namespace" = { fg = "{{colors.secondary_container.default.hex}}", modifiers = ["bold"] }
+
+"markup.heading" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"markup.list" = "{{colors.on_error.default.hex}}"
+"markup.bold" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"markup.italic" = { fg = "{{colors.secondary_container.default.hex}}", modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "{{colors.tertiary_container.default.hex}}", modifiers = ["italic"] }
+"markup.link.text" = { fg = "{{colors.secondary.default.hex}}", modifiers = ["bold"] }
+"markup.quote" = "{{colors.primary.default.hex}}"
+"markup.raw" = "{{colors.primary_container.default.hex}}"
+
+"diff.plus" = "{{colors.secondary.default.hex}}"
+"diff.delta" = "{{colors.primary.default.hex}}"
+"diff.minus" = "{{colors.error.default.hex}}"
+
+"diagnostic.hint" = { underline = { color = "{{colors.primary.default.hex}}", style = "curl" } }
+"diagnostic.info" = { underline = { color = "{{colors.secondary.default.hex}}", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "{{colors.tertiary.default.hex}}", style = "curl" } }
+"diagnostic.error" = { underline = { color = "{{colors.error.default.hex}}", style = "curl" } }
+
+"hint" = "{{colors.primary_container.default.hex}}"
+"info" = "{{colors.primary.default.hex}}"
+"debug" = "{{colors.secondary.default.hex}}"
+"warning" = "{{colors.tertiary.default.hex}}"
+"error" = "{{colors.error.default.hex}}"
+

@@ -1,0 +1,168 @@
+{
+  "layer": "top",
+  "position": "left",
+  "margin": "11 0 11 9",
+  "reload_style_on_change": true,
+  
+  // Left Modules
+  
+  "modules-left": [
+    "clock",
+    "network",
+    "custom/swaync",
+    "power-profiles-daemon",
+      "custom/sep",
+    "tray"
+  ],
+  "clock": {
+    "tooltip": true,
+    "format": "{:%H\n%M}",
+    "tooltip-format": "{:%Y-%m-%d}"
+  },
+  "network": {
+    "format": "{icon}{}",
+    "format-icons": {
+      "wifi": [
+        "󰤨"
+      ],
+      "ethernet": [
+        "󰈀"
+      ],
+      "disconnected": [
+        "󰖪"
+      ]
+    },
+    "format-wifi": "󰤨",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "format-linked": "󰈁",
+    "tooltip": false,
+    "on-click": "alacritty -e nmtui"
+  },
+  "custom/swaync": {
+    "tooltip":true,     
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "tray": {
+    "icon-size": 18,
+    "show-passive-items": true
+  },
+  
+  // Center Modules
+  
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format-icons": {
+      "active": "",
+      "urgent": "",
+      "default": ""
+    }
+  },
+  
+  // Right Modules
+  
+  "modules-right": [
+    "backlight",
+    "battery",
+    "custom/sep",
+    "pulseaudio",
+    "custom/powermenu"
+  ],
+  
+  "temperature": {
+    "rotate": 90,
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+      "battery": {
+    "rotate": 90,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": " {icon} {capacity}% ",
+        "format-charging": " {capacity}% ",
+        "format-plugged": " {capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "on-click-right": "better-control -B",
+	    "interval": 3
+    },
+
+  "pulseaudio": {
+    "rotate": 90,
+    "format": "{icon} {volume}%",
+    "format-muted": "MUTE ",
+    "format-icons": {
+      "default": [
+        " ",
+        " "
+      ]
+    },
+    "scroll-step": 3,
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+  },
+  "custom/sep": {
+    //    "format": "──"
+    "format": ""
+  },
+    "backlight": {
+    "rotate": 90,
+        "device": "amdgpu_bl0",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "/home/ravish/script/brightness.sh set 5%+",
+        "on-scroll-down": "/home/ravish/script/brightness.sh set 5%-",
+        //"min-length": 9,
+	"tooltip": false,
+	"on-click-right": "better-control -d"
+    },
+      
+    "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+        "default": "",
+        "performance": "  ",
+        "balanced": " 󰣨 ",
+        "power-saver": "  "
+                    }
+    },
+   "custom/powermenu": {
+    //"on-click": "~/.config/wofi/scripts/wofipowermenu.py",
+    "on-click": "wlogout -b 6 ",
+    "format": "⏻",
+    "tooltip": false
+  }
+}

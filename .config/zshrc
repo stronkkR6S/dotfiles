@@ -1,0 +1,111 @@
+# ┌─────────────────────────────────────┐
+# │ 🚀 Auto-launch for Hyprland/Sway   │
+# └─────────────────────────────────────┘
+#[ "$(tty)" = "/dev/tty1" ] && ! pidof -q Hyprland && dbus-run-session Hyprland
+if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    export XDG_CURRENT_DESKTOP=sway
+    export XDG_SESSION_DESKTOP=sway
+    export XDG_SESSION_TYPE=wayland
+    dbus-run-session sway
+fi
+# ┌─────────────────────────────────────┐
+# │ 🧠 Basic Environment               │
+# └─────────────────────────────────────┘
+export EDITOR=hx
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.spicetify:$HOME/script:$HOME/learning:$PATH"
+export PNPM_HOME="$HOME/.local/share/pnpm"
+[[ ":$PATH:" != *":$PNPM_HOME:"* ]] && export PATH="$PNPM_HOME:$PATH"
+
+
+# ┌─────────────────────────────────────┐
+# │ 💡 Prompt                          │
+# └─────────────────────────────────────┘
+autoload -U colors && colors
+eval "$(starship init zsh)"
+#export PS1='[%{$fg[green]%}%n@%{$fg[blue]%}%m %{$fg[magenta]%}%~] %{$reset_color%}$ '
+# ┌─────────────────────────────────────┐
+# │ 📜 History                         │
+# └─────────────────────────────────────┘
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory sharehistory hist_ignore_space hist_ignore_all_dups \
+       hist_save_no_dups hist_ignore_dups hist_find_no_dups
+
+# ┌─────────────────────────────────────┐
+# │ 🔧 Zsh Options                     │
+# └─────────────────────────────────────┘
+setopt autocd interactivecomments magicequalsubst nonomatch notify \
+       numericglobsort promptsubst
+
+bindkey -e  # Emacs keybindings
+
+# ┌─────────────────────────────────────┐
+# │ 🔌 Plugins with Zinit              │
+# └─────────────────────────────────────┘
+source ~/.local/share/zinit/zinit.git/zinit.zsh
+
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-history-substring-search
+zinit light Aloxaf/fzf-tab
+zinit light zdharma-continuum/fast-syntax-highlighting
+
+# ┌─────────────────────────────────────┐
+# │ 🔁 History Search Bindings         │
+# └─────────────────────────────────────┘
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# ┌─────────────────────────────────────┐
+# │ 🧠 Completion Styling              │
+# └─────────────────────────────────────┘
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# ┌─────────────────────────────────────┐
+# │ 📦 Tools Init                      │
+# └─────────────────────────────────────┘
+eval "$(zoxide init zsh)"
+
+# ┌─────────────────────────────────────┐
+# │ 🏷 Aliases                         │
+# └─────────────────────────────────────┘
+alias sudo='doas'
+alias ..='cd ..'
+alias cat='bat'
+alias pipes='pipes-rs -f 40'
+alias mkdir='mkdir -pv'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias grep='grep --color=auto'
+alias tr='tree -L 2 -h'
+#alias ls='lsd -X -l --icon=always'
+alias ls='eza -l --icons --sort=size '
+alias osage='birth=$(stat -c %W /); now=$(date +%s); diff=$((now - birth)); date -u -d "@$diff" +"%j days (%-m months, %-d days)"'
+alias update='sudo emerge --sync && sudo emerge -uDNa --with-bdeps=y @world'
+alias brokefetch='bash /home/ravish/down/h.sh'
+
+# ┌─────────────────────────────────────┐
+# │ 🔍 Fuzzy Jump with zoxide + fzf    │
+# └─────────────────────────────────────┘
+i() {
+  local dir
+  dir=$(zoxide query -l | fzf --height=50% --reverse --border \
+    --preview 'eza -Ta --icons --level=2 --color=always {} 2>/dev/null | head -40')
+  [[ -n "$dir" ]] && cd "$dir"
+}
+
+
+upload() {
+    for file in "$@"; do
+        curl -F "file=@$file" https://0x0.st
+    done
+}
+
+### End of Zinit's installer chunk
