@@ -1,3 +1,2 @@
-#This is my config for swayfx gentoo
-
-with matugen and pywal 
+# This is my config for swayfx gentoo
+## with matugen and pywal
