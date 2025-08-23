@@ -6,7 +6,7 @@
 #### Preview
 
 
-<img width="1920" height="1080" alt="ssr-7" src="https://github.com/user-attachments/assets/d935bbb2-3185-4f21-a78d-2d3ac9feb8e1" />
+<img width="1920" height="1080" alt="ssr-17" src="https://github.com/user-attachments/assets/b3bc33aa-f8f7-40ce-bde0-98c098cdddf8" />
 
 
 <img width="1920" height="1080" alt="ssr-10" src="https://github.com/user-attachments/assets/ea306d96-edd4-41b8-ac1b-a8236bb41b75" />
