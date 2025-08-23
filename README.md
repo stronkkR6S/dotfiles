@@ -17,8 +17,7 @@
 <img width="1920" height="1080" alt="ssr-12" src="https://github.com/user-attachments/assets/af763e85-8d36-49f7-8d55-c63b4b6aa4cc" />
 
 
-<img width="1920" height="1080" alt="ssr-13" src="https://github.com/user-attachments/assets/5d89262b-88ea-4f92-
-a4a6-8fa529053126" />
+<img width="1920" height="1080" alt="ssr-13" src="https://github.com/user-attachments/assets/5d89262b-88ea-4f92-a4a6-8fa529053126" />
 
 
 <img width="1920" height="1080" alt="ssr-16" src="https://github.com/user-attachments/assets/b86c5e90-58e0-401e-9102-e5d9d2555380" />
