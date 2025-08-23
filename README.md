@@ -49,3 +49,4 @@ a4a6-8fa529053126" />
 ###### Cava
 ###### Zathura
 ###### Hyprlock
+###### Waybar
