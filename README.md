@@ -38,4 +38,7 @@
 - **Zathura** – PDF viewer  
 - **Hyprlock** – Screen locker  
 - **Waybar** – Status bar  
+- **Matugen** – Generates dynamic color themes from images
+- **Pywal** – Generates dynamic color themes from images
+- **Walogram** – For telegram dynamic theme
 
