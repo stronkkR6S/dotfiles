@@ -15,7 +15,7 @@ set $browser firefox-bin
 #############################
 #       Monitor Setup       #
 #############################
-output eDP-1 resolution 1920x1080@60Hz position 0,0
+output eDP-1 resolution 1920x1080@60Hz position 0 0 scale 1
 # Run: swaymsg -t get_outputs to list outputs
 
 #############################
