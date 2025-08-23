@@ -1,5 +1,5 @@
 #  Colors: Matugen & Pywal
-#In some files, you may need to manually specify your home folder.
+# In some files, you may need to manually specify your home folder.
 
 ##  Preview
 
