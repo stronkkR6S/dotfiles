@@ -20,9 +20,9 @@
 
 ##  Applications Used
 
-- **SwayFx** – Window effects  
+- **SwayFx** – Window manager
 - **Youtube-music** – Music player  
-- **Vesktop** – Desktop manager  
+- **Vesktop** – Discord wayland client 
 - **Telegram-bin** – Messaging  
 - **Thunar** – File manager  
 - **Wlogout** – Logout utility  
