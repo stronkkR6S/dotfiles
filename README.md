@@ -22,4 +22,7 @@
 a4a6-8fa529053126" />
 
 
+<img width="1920" height="1080" alt="ssr-16" src="https://github.com/user-attachments/assets/b86c5e90-58e0-401e-9102-e5d9d2555380" />
+
+
 <img width="1920" height="1080" alt="ssr-14" src="https://github.com/user-attachments/assets/21d938ec-596a-4270-9876-a5997bf12746" />
