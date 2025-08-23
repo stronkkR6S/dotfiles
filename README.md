@@ -1,7 +1,7 @@
 ##  Colors: Matugen & Pywal
-## In some files, you may need to manually specify your home folder.
+### In some files, you may need to manually specify your home folder.
 
-##  Preview
+###  Preview
 
 | ![ssr-17](https://github.com/user-attachments/assets/b3bc33aa-f8f7-40ce-bde0-98c098cdddf8) | ![ssr-10](https://github.com/user-attachments/assets/ea306d96-edd4-41b8-ac1b-a8236bb41b75) |
 |:---:|:---:|
