@@ -28,6 +28,12 @@ a4a6-8fa529053126" />
 <img width="1920" height="1080" alt="ssr-14" src="https://github.com/user-attachments/assets/21d938ec-596a-4270-9876-a5997bf12746" />
 
 
+<img width="1920" height="1080" alt="ssr-18" src="https://github.com/user-attachments/assets/bf7eab7a-359b-4351-9191-33b77d9523e9" />
+
+
+<img width="1920" height="1080" alt="ssr-19" src="https://github.com/user-attachments/assets/c3f2d2a9-a1d8-4ac0-967b-b3829e42fd72" />
+
+
 ##### Applications
 ###### SwayFx
 ###### Youtube-music
