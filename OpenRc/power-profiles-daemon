@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name="power-profiles-daemon"
+description="Power Profiles Daemon"
+
+pidfile="/run/power-profiles-daemon.pid"
+command="/bin/sh"
+command_args="-c 'sleep 6; exec /usr/libexec/power-profiles-daemon'"
+command_background=true
+
+start_pre() {
+    checkpath -d /var/lib/power-profiles-daemon
+}
+
+depend() {
+    need dbus localmount
+}
+

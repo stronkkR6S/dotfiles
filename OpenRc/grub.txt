@@ -1,0 +1,5 @@
+GRUB_TIMEOUT=0 # timeout set to 2 
+GRUB_TIMEOUT_STYLE=hidden  # hide menu  until shift is pressed
+GRUB_DEFAULT=saved #remeber last entry 
+GRUB_SAVEDEFAULT=true # same
+
