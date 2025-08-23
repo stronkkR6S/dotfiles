@@ -51,11 +51,6 @@
             "keyColor": "green"
         },
         {
-            "type": "localip",
-            "key": "   Local IP ",
-            "keyColor": "green"
-        },
-        {
             "type": "custom",
             "format": "{$1}",
             "outputColor": "separator"
