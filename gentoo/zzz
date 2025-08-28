@@ -27,3 +27,6 @@ media-sound/youtube-music-bin ~amd64
 gui-apps/hypridle ~amd64
 gui-apps/hyprlock ~amd64
 dev-cpp/sdbus-c++  ~amd64
+dev-util/bash-language-server ~amd64
+x11-misc/rofi-emoji ~amd64
+gui-apps/wtype ~amd64

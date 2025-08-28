@@ -21,6 +21,7 @@ app-shells/zoxide
 app-shells/zsh
 app-text/zathura
 app-text/zathura-pdf-mupdf
+dev-util/bash-language-server
 gui-apps/foot
 gui-apps/grim
 gui-apps/hypridle
@@ -70,13 +71,12 @@ sys-fs/ncdu
 sys-fs/xfsprogs
 sys-kernel/installkernel
 sys-kernel/linux-firmware
-sys-kernel/xanmod-sources
 sys-power/power-profiles-daemon
 sys-process/htop
 www-client/firefox-bin
 x11-apps/xhost
 x11-misc/autotiling
 x11-misc/pywal16
-x11-terms/alacritty
+x11-misc/rofi-emoji
 x11-themes/adw-gtk3
 xfce-base/thunar
