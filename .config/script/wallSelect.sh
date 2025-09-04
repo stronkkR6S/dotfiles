@@ -3,7 +3,7 @@
 # WallSelect for Hyprland + Rofi Thumbnail Picker
 # Author: Ravish (modified to use matugen, pywal, and walogram)
 
-wall_dir="$HOME/pictures/lol/fav"
+wall_dir="$HOME/pics/lol/fav"
 cacheDir="$HOME/.cache/wallthumbs"
 rofi_theme="$HOME/.config/rofi/wallselect.rasi"
 
