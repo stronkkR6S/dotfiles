@@ -1,4 +1,5 @@
 app-admin/doas
+app-admin/eclean-kernel
 app-admin/sysklogd
 app-arch/lz4
 app-arch/unzip
@@ -12,6 +13,7 @@ app-misc/cliphist
 app-misc/fastfetch
 app-misc/jq
 app-misc/nwg-look
+app-misc/tealdeer
 app-misc/tmux
 app-portage/eix
 app-portage/gentoolkit
@@ -19,6 +21,7 @@ app-shells/fzf
 app-shells/starship
 app-shells/zoxide
 app-shells/zsh
+app-text/tree
 app-text/zathura
 app-text/zathura-pdf-mupdf
 dev-util/bash-language-server
@@ -71,6 +74,7 @@ sys-fs/ncdu
 sys-fs/xfsprogs
 sys-kernel/installkernel
 sys-kernel/linux-firmware
+sys-kernel/xanmod-sources
 sys-power/power-profiles-daemon
 sys-process/htop
 www-client/firefox-bin
