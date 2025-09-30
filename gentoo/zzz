@@ -30,3 +30,8 @@ dev-cpp/sdbus-c++  ~amd64
 dev-util/bash-language-server ~amd64
 x11-misc/rofi-emoji ~amd64
 gui-apps/wtype ~amd64
+app-misc/tealdeer ~amd64
+gui-libs/gtk4-layer-shell ~amd64
+dev-build/meson ~amd64
+gui-libs/hyprutils ~amd64
+sys-kernel/cachyos-sources ~amd64
