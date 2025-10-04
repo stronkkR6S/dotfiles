@@ -1,0 +1,221 @@
+@import url("firefox.css");
+
+/*───────────────────────────────
+     PYWALFOX CUSTOM COLORS
+───────────────────────────────*/
+#main-window {
+  --pywalfox-background: var(--lwt-accent-color);
+  --pywalfox-background-light: var(--arrowpanel-background);
+  --pywalfox-text: var(--arrowpanel-color);
+  --pywalfox-text-focus: var(--toolbar-color);
+  --pywalfox-unselected-tab-opacity: 0.8;
+  --pywalfox-darker-background: rgba(0, 0, 0, 0.4);
+}
+
+/*───────────────────────────────
+     GLOBAL BASE STYLES
+───────────────────────────────*/
+* {
+  border-radius: 0 !important;
+  font-family: "JetBrainsMono Nerd Font", monospace !important;
+}
+
+:root {
+  --uc-border-radius: 0 !important;
+  --uc-urlbar-width: clamp(150px, 40vw, 500px);
+  --uc-active-tab-width: clamp(60px, 18vw, 220px);
+  --uc-inactive-tab-width: clamp(50px, 15vw, 200px);
+  --container-tabs-indicator-margin: 0;
+  --show-tab-close-button: none;
+  --show-tab-close-button-hover: none;
+}
+
+/*───────────────────────────────
+     DISABLE DEFAULT APPEARANCE
+───────────────────────────────*/
+menupopup,
+menuseparator,
+button,
+search-textbox {
+  -moz-appearance: none !important;
+}
+
+/*───────────────────────────────
+     MATCH PYWALFOX COLORS
+───────────────────────────────*/
+button,
+search-textbox,
+menuseparator {
+  background-color: var(--pywalfox-darker-background) !important;
+}
+
+menuseparator {
+  height: 1px !important;
+}
+
+/* Context Menu Hover */
+menu[_moz-menuactive="true"],
+menuitem[_moz-menuactive="true"] {
+  background-color: var(--pywalfox-background) !important;
+  color: var(--pywalfox-text-focus) !important;
+}
+
+/* Popup & Notifications */
+menupopup,
+notification {
+  background: var(--pywalfox-background-light) !important;
+  color: var(--pywalfox-text) !important;
+  border: none !important;
+}
+
+/*───────────────────────────────
+     TRANSPARENT TOOLBAR & TABS
+───────────────────────────────*/
+#TabsToolbar,
+#nav-bar,
+#navigator-toolbox {
+  background: rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(15px) !important;
+  -moz-backdrop-filter: blur(15px) !important;
+  box-shadow: none !important;
+  border: none !important;
+  position: relative !important;
+}
+
+/* Subtle Overlays */
+#TabsToolbar::before,
+#nav-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Transparent Tabs & Panels */
+.tabbrowser-tab > .tab-stack > .tab-background,
+#tabbrowser-tabpanels,
+#statuspanel-label,
+.sidebar-splitter,
+window,
+#toolbar-menubar,
+#sidebar-box,
+#main-window {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/*───────────────────────────────
+     TAB STYLE & BEHAVIOR
+───────────────────────────────*/
+.tabbrowser-tab[selected="true"] > .tab-stack > .tab-background {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 4px !important;
+  border: none !important;
+}
+
+.tabbrowser-tab:not([visuallyselected="true"]) {
+  opacity: var(--pywalfox-unselected-tab-opacity) !important;
+}
+
+/* Active Tab Outline */
+.tabbrowser-tab[selected] > .tab-stack > .tab-background {
+  border: 2px solid var(--color2) !important;
+}
+
+/* Close Button Behavior */
+.tabbrowser-tab:not([pinned]) .tab-close-button {
+  display: none !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+  display: -moz-inline-box !important;
+}
+
+/* Tab Widths */
+.tabbrowser-tab[selected][fadein]:not([pinned]) {
+  max-width: var(--uc-active-tab-width) !important;
+}
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) {
+  max-width: var(--uc-inactive-tab-width) !important;
+}
+
+/*───────────────────────────────
+     CLEAN INTERFACE ELEMENTS
+───────────────────────────────*/
+#forward-button,
+#urlbar-zoom-button,
+#PanelUI-button,
+#reader-mode-button,
+#tracking-protection-icon-container,
+.tab-secondary-label,
+#pageActionButton,
+#page-action-buttons,
+#urlbar-go-button,
+#star-button,
+.titlebar-buttonbox-container,
+.titlebar-spacer {
+  display: none !important;
+}
+
+/* Bookmarks Toolbar */
+#PersonalToolbar toolbarbutton:not(:hover),
+#bookmarks-toolbar-button:not(:hover) {
+  filter: grayscale(1) !important;
+}
+
+/*───────────────────────────────
+     ONE-LINE MODE
+───────────────────────────────*/
+@media (min-width: 1000px) {
+  #TabsToolbar {
+    margin-left: var(--uc-urlbar-width) !important;
+  }
+  #nav-bar {
+    margin: calc((var(--urlbar-min-height) * -1) - 10px)
+      calc(100vw - var(--uc-urlbar-width)) 0 0 !important;
+  }
+}
+
+/*───────────────────────────────
+     URL BAR STYLE
+───────────────────────────────*/
+#urlbar,
+#urlbar-background,
+#urlbar-input-container {
+  background: rgba(0, 0, 0, 0) !important;
+  backdrop-filter: blur(10px) !important;
+  -moz-backdrop-filter: blur(10px) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Reset any padding added for icon */
+#urlbar-input {
+  padding-left: 0 !important;
+}
+
+/* Remove blue focus glow */
+#urlbar[focused="true"] > #urlbar-background {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Dropdown suggestions */
+#urlbar .urlbarView,
+#urlbar .urlbarView-row {
+  color: var(--secondary) !important;
+  background-color: var(--surface_container_low) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+/* Placeholder */
+#urlbar-input::placeholder {
+  color: transparent !important;
+}
+#urlbar[focused="true"] #urlbar-background::after,
+#urlbar-input:not(:placeholder-shown) ~ #urlbar-background::after {
+  display: none !important;
+}
