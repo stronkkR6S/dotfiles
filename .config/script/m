@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Function to send notification with album art
+notify_spotify() {
+    tmpimg=$(mktemp --suffix=.png)
+
+    status=$(playerctl -p spotify status 2>/dev/null)
+    if [[ "$status" != "Playing" ]]; then
+        notify-send "Spotify" "Spotify is not playing"
+        [[ -f "$tmpimg" ]] && rm "$tmpimg"
+        return
+    fi
+
+    title=$(playerctl -p spotify metadata title 2>/dev/null)
+    artist=$(playerctl -p spotify metadata artist 2>/dev/null)
+    arturl=$(playerctl -p spotify metadata mpris:artUrl 2>/dev/null)
+
+    if [[ -z "$title" || -z "$artist" ]]; then
+        notify-send "Spotify" "No song info available"
+        [[ -f "$tmpimg" ]] && rm "$tmpimg"
+        return
+    fi
+
+    if [[ -n "$arturl" ]]; then
+        if [[ "$arturl" == file://* ]]; then
+            arturl=${arturl#file://}
+            cp "$arturl" "$tmpimg"
+        else
+            curl -s "$arturl" -o "$tmpimg"
+        fi
+    else
+        tmpimg=""
+    fi
+
+    if [[ -f "$tmpimg" ]]; then
+        notify-send "Now Playing" "$title By $artist" -i "$tmpimg"
+        rm "$tmpimg"
+   fi
+}
+
+# Run notify_spotify once at start
+notify_spotify
+
+# Then listen for metadata changes and notify on each change
+playerctl -p spotify metadata --format '{{title}}' --follow | while read -r line; do
+    notify_spotify
+done
