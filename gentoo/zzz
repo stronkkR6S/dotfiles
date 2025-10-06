@@ -34,4 +34,6 @@ app-misc/tealdeer ~amd64
 gui-libs/gtk4-layer-shell ~amd64
 dev-build/meson ~amd64
 gui-libs/hyprutils ~amd64
+sys-boot/uefi-mkconfig ~amd64
+sys-kernel/installkernel ~amd64
 sys-kernel/cachyos-sources ~amd64
