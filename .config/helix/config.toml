@@ -1,37 +1,35 @@
-theme ="helix"
+theme = "helix"  # Color theme for Helix
 
 [editor]
-color-modes = true
-mouse = false
-#line-number = "relative"
-bufferline = "multiple"
-middle-click-paste = true
-auto-completion = true
-auto-format = true
-undercurl = true
-auto-info = true
-#gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
-indent-heuristic = "tree-sitter"
-end-of-line-diagnostics = "hint" # sexy error messages
-popup-border = "all"
+color-modes = true           # Enable true color (24-bit)
+mouse = true                 # Enable mouse support
+bufferline = "multiple"      # Show multiple buffers in top line
+middle-click-paste = true    # Middle-click pastes clipboard
+auto-completion = true       # Show completions automatically
+auto-format = true           # Format code on save if supported
+undercurl = true             # Squiggly underline for errors/warnings
+auto-info = true             # Show file info (lines, encoding, etc.)
+indent-heuristic = "tree-sitter"  # Guess indentation using tree-sitter
+end-of-line-diagnostics = "hint"  # Show subtle hints at end of line
+popup-border = "all"         # Draw borders around popups
 
 [editor.cursor-shape]
-insert = "bar"
-select = "underline"
+insert = "bar"       # Cursor is vertical bar in insert mode
+select = "underline" # Cursor is underline in selection mode
 
 [editor.inline-diagnostics]
-cursor-line = "hint"
-
+cursor-line = "hint"  # Show inline error/warning hints on cursor line
 
 [editor.statusline]
-left = ["mode", "spinner"]
-center = ["file-name"]
-right = ["diagnostics", "position", "separator",  "total-line-numbers", "separator", "file-type"]
-separator = ""
-mode.normal = "🟤 NORMAL"
+left = ["mode", "spinner"]                 # Left: mode + spinner
+center = ["file-name"]                     # Center: current file name
+right = ["diagnostics", "position", "separator", "total-line-numbers", "separator", "file-type"]  # Right: info and type
+separator = ""                            # Separator between items
+mode.normal = "🟤 NORMAL"                  # Emoji + mode display
 mode.insert = "🟠 INSERT"
 mode.select = "🔴 SELECT"
-[editor.auto-pairs]
+
+[editor.auto-pairs]  # Auto insert closing pairs
 '(' = ')'
 '{' = '}'
 '[' = ']'
@@ -40,48 +38,40 @@ mode.select = "🔴 SELECT"
 '<' = '>'
 
 [editor.search]
-smart-case = true
-wrap-around = true
+smart-case = true   # Case-insensitive unless uppercase is used
+wrap-around = true  # Search wraps around file
 
 [editor.lsp]
-enable = true
- display-inlay-hints = true
-display-messages = true
-auto-signature-help = true
-snippets = true
-display-signature-help-docs = true
+enable = true                       # Enable LSP
+display-inlay-hints = true          # Show parameter/type hints inline
+display-messages = true             # Show LSP messages in popup
+auto-signature-help = true          # Show function signature while typing
+snippets = true                     # Enable snippets
+display-signature-help-docs = true  # Show docs in signature popup
 
 [editor.indent-guides]
-render = true
-character = "|" # Some characters that work well: "▏", "┆", "┊", "⸽" |
-skip-levels = 1
-
-
+render = true      # Show vertical indent guides
+character = "|"    # Character for indent guide
+skip-levels = 1    # Skip first level for cleaner look
 
 [keys.normal]
-esc = ["collapse_selection", "keep_primary_selection" ]
-X = ["extend_line_above", "extend_to_line_bounds"]
-G = "goto_last_line"
-"tab" = "goto_next_buffer"
-"S-tab" = "goto_previous_buffer"
-#S-d = "delete_selection"
-d = "delete_selection_noyank"
-#S-c = "change_selection"
-c = "change_selection_noyank"
+esc = ["collapse_selection", "keep_primary_selection"]  # Collapse selection, keep primary clipboard
+X = ["extend_line_above", "extend_to_line_bounds"]      # Extend selection line up and full line
+G = "goto_last_line"                                    # Jump to last line
+"tab" = "goto_next_buffer"                              # Next buffer
+"S-tab" = "goto_previous_buffer"                        # Previous buffer
+d = "delete_selection_noyank"                           # Delete selection without copying
+c = "change_selection_noyank"                           # Change selection without copying
 
 [editor.soft-wrap]
-enable = true
+enable = true  # Wrap long lines visually
 
 [editor.file-picker]
-hidden = false
+hidden = false  # Show hidden files in file picker
 
 [keys.insert]
-C-j = "move_char_left"
-C-l = "move_char_right"
-
+C-j = "move_char_left"   # Move cursor left in insert mode
+C-l = "move_char_right"  # Move cursor right
 
 [keys.normal.space]
-l = ":toggle lsp.display-inlay-hints"
-
-
-
+l = ":toggle lsp.display-inlay-hints"  # Toggle LSP inlay hints with space+l
