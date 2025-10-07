@@ -1,100 +1,104 @@
 inherits = "term16_light"
 
-"ui.background.separator" = { bg = "#bdc2ff" }
-"ui.cursor" = { fg = "FFFFFF", bg = "#FFFFFF" }
-"ui.cursor.match" = { fg = "#000000", bg = "#FFFFFF" }
-"ui.cursor.primary" = { fg = "#000000", bg = "#FFFFFF" }
-"ui.cursor.secondary" = { fg = "#000000", bg = "#FFFFFF" }
+"ui.background.separator" = { bg = "{{colors.primary.default.hex}}" }
+"ui.cursor" = { fg = "{{ colors.background.default.hex }}", bg = "{{ colors.on_primary_container.default.hex }}" }
+"ui.cursor.primary" = { fg = "{{ colors.background.default.hex }}", bg = "{{ colors.primary_fixed.default.hex }}" }
+"ui.cursor.match" = { fg = "{{ colors.on_primary_container.default.hex }}", modifiers = ["bold"] }
 
-"ui.cursorline.primary" = { bg = "#444559" }
-"ui.cursorline.secondary" = { bg = "#444559" }
 
-"ui.cursorcolumn.primary" = { bg = "#444559" }
-"ui.cursorcolumn.secondary" = { bg = "#444559" }
+"ui.cursorline.primary" = { bg = "{{colors.secondary_container.default.hex}}" }
+"ui.cursorline.secondary" = { bg = "{{colors.secondary_container.default.hex}}" }
 
-"ui.gutter" = { fg = "#c4c4dd" }
+"ui.cursorcolumn.primary" = { bg = "{{colors.secondary_container.default.hex}}" }
+"ui.cursorcolumn.secondary" = { bg = "{{colors.secondary_container.default.hex}}" }
+
+"ui.gutter" = { fg = "{{colors.secondary.default.hex}}" }
 "ui.gutter.selected" = { bg = "none" }
 
-"ui.linenr" = { fg = "#c4c4dd" }
-# "ui.linenr.selected" = { fg = "#dfe0ff", modifiers = ["bold"] }
+"ui.linenr" = { fg = "{{colors.secondary.default.hex}}" }
+# "ui.linenr.selected" = { fg = "{{colors.on_primary_container.default.hex}}", modifiers = ["bold"] }
 "ui.linenr.selected" = { fg = "F8F8F8", modifiers = ["bold"] }
 
 "ui.menu" = { fg = "F8F8F8"}
-"ui.menu.selected" = { fg = "#252b61", bg = "#bdc2ff", modifiers = ["bold"] }
-"ui.menu.scroll" = { fg = "#c4c4dd" }
+"ui.menu.selected" = { fg = "{{colors.on_primary.default.hex}}", bg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"ui.menu.scroll" = { fg = "{{colors.secondary.default.hex}}" }
 
-"ui.help" = { fg = "#bdc2ff" }
-"ui.text" = { fg = "#bdc2ff" }
-"ui.text.focus" = { fg = "#e1e0f9" }
+"ui.help" = { fg = "{{colors.primary.default.hex}}" }
+"ui.text" = { fg = "{{colors.primary.default.hex}}" }
+"ui.text.focus" = { fg = "{{colors.on_secondary_container.default.hex}}" }
 
-"ui.selection" = { bg = "#444559" }
+"ui.selection" = { bg = "{{colors.secondary_container.default.hex}}" }
 "ui.popup" = { fg = "#000000", bg = "none" }
-"ui.statusline" = { bg = "#3c4279" }
-"ui.statusline.inactive" = { fg = "#e1e0f9", modifiers = ["underlined"] }
-"ui.statusline.insert" = { fg = "#252b61", bg = "#bdc2ff" }
-"ui.statusline.select" = { fg = "#2d2f42", bg = "#c4c4dd" }
+"ui.statusline" = { bg = "{{colors.primary_container.default.hex}}" }
+"ui.statusline.inactive" = { fg = "{{colors.secondary_fixed.default.hex}}", modifiers = ["underlined"] }
+"ui.statusline.insert" = { fg = "{{colors.on_primary.default.hex}}", bg = "{{colors.primary.default.hex}}" }
+"ui.statusline.select" = { fg = "{{colors.on_secondary.default.hex}}", bg = "{{colors.secondary.default.hex}}" }
 
-"ui.virtual" = { fg = "#c4c4dd" }
-"ui.virtual.indent-guide" = { fg = "#e7b9d6", modifiers = ["dim"] }
-"ui.virtual.ruler" = { bg = "#444559" }
-"ui.virtual.wrap" = { fg = "#c4c4dd" }
+"ui.virtual" = { fg = "{{colors.secondary.default.hex}}" }
+"ui.virtual.indent-guide" = { fg = "{{colors.tertiary.default.hex}}", modifiers = ["dim"] }
+"ui.virtual.ruler" = { bg = "{{colors.secondary_container.default.hex}}" }
+"ui.virtual.wrap" = { fg = "{{colors.secondary.default.hex}}" }
 
-"ui.window" = { fg = "#bdc2ff", modifiers = ["bold"] }
+"ui.window" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
 
 # Syntax (High visibility for warm theme)
 
 "comment" = { fg = "#F8F8F8", modifiers = ["bold"] }
 
-"attribute" = "#bdc2ff"
-"constant" = { fg = "#bdc2ff", modifiers = ["bold"] }
-"constant.numeric" = { fg = "#c4c4dd", modifiers = ["bold"] }
-"constant.character.escape" = "#444559"
+"attribute" = "{{colors.primary.default.hex}}"
+"constant" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"constant.numeric" = { fg = "{{colors.secondary.default.hex}}", modifiers = ["bold"] }
+"constant.character.escape" = "{{colors.secondary_container.default.hex}}"
 
-"constructor" = "#bdc2ff"
-"function" = "#bdc2ff"
-"function.builtin" = { fg = "#c4c4dd", modifiers = ["bold"] }
+"constructor" = "{{colors.primary.default.hex}}"
+"function" = "{{colors.primary.default.hex}}"
+"function.builtin" = { fg = "{{colors.secondary.default.hex}}", modifiers = ["bold"] }
 
-"tag" = { fg = "#444559", modifiers = ["bold"] }
-"type" = "#e7b9d6"
-"type.builtin" = { fg = "#e1e0f9", modifiers = ["bold"] }
-"type.enum.variant" = { fg = "#e7b9d6", modifiers = ["bold"] }
+"tag" = { fg = "{{colors.secondary_container.default.hex}}", modifiers = ["bold"] }
+"type" = "{{colors.tertiary.default.hex}}"
+"type.builtin" = { fg = "{{colors.on_secondary_container.default.hex}}", modifiers = ["bold"] }
+"type.enum.variant" = { fg = "{{colors.tertiary.default.hex}}", modifiers = ["bold"] }
 
-"string" = "#e1e0f9"
-"special" = "#ffb4ab"
+"string" = "{{colors.secondary_fixed.default.hex}}"
+"special" = "{{colors.error.default.hex}}"
 
-"variable" = { fg = "#bdc2ff" }
-"variable.parameter" = { fg = "#dfe0ff", modifiers = ["italic"] }
-"variable.other.member" = "#c4c4dd"
+"variable" = { fg = "{{colors.primary.default.hex}}" }
+"variable.parameter" = { fg = "{{colors.on_primary_container.default.hex}}", modifiers = ["italic"] }
+"variable.other.member" = "{{colors.secondary.default.hex}}"
 
-"keyword" = { fg = "#bdc2ff", modifiers = ["bold"] }
-"keyword.control.exception" = { fg = "#690005" }
-"keyword.directive" = { fg = "#bdc2ff", modifiers = ["bold"] }
-"keyword.operator" = { fg = "#c4c4dd", modifiers = ["bold"] }
+"keyword" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"keyword.control.exception" = { fg = "{{colors.on_error.default.hex}}" }
+"keyword.directive" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"keyword.operator" = { fg = "{{colors.secondary.default.hex}}", modifiers = ["bold"] }
 
-"label" = "#690005"
-"namespace" = { fg = "#444559", modifiers = ["bold"] }
+"label" = "{{colors.on_error.default.hex}}"
+"namespace" = { fg = "{{colors.secondary_container.default.hex}}", modifiers = ["bold"] }
 
-"markup.heading" = { fg = "#bdc2ff", modifiers = ["bold"] }
-"markup.list" = "#690005"
-"markup.bold" = { fg = "#bdc2ff", modifiers = ["bold"] }
-"markup.italic" = { fg = "#444559", modifiers = ["italic"] }
+"markup.heading" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"markup.list" = "{{colors.on_error.default.hex}}"
+"markup.bold" = { fg = "{{colors.primary.default.hex}}", modifiers = ["bold"] }
+"markup.italic" = { fg = "{{colors.secondary_container.default.hex}}", modifiers = ["italic"] }
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
-"markup.link.url" = { fg = "#5e3c53", modifiers = ["italic"] }
-"markup.link.text" = { fg = "#c4c4dd", modifiers = ["bold"] }
-"markup.quote" = "#bdc2ff"
-"markup.raw" = "#3c4279"
+"markup.link.url" = { fg = "{{colors.tertiary_container.default.hex}}", modifiers = ["italic"] }
+"markup.link.text" = { fg = "{{colors.secondary.default.hex}}", modifiers = ["bold"] }
+"markup.quote" = "{{colors.primary.default.hex}}"
+"markup.raw" = "{{colors.primary_container.default.hex}}"
 
-"diff.plus" = "#c4c4dd"
-"diff.delta" = "#bdc2ff"
-"diff.minus" = "#ffb4ab"
+"diff.plus" = "{{colors.secondary.default.hex}}"
+"diff.delta" = "{{colors.primary.default.hex}}"
+"diff.minus" = "{{colors.error.default.hex}}"
 
-"diagnostic.hint" = { underline = { color = "#bdc2ff", style = "curl" } }
-"diagnostic.info" = { underline = { color = "#c4c4dd", style = "curl" } }
-"diagnostic.warning" = { underline = { color = "#e7b9d6", style = "curl" } }
-"diagnostic.error" = { underline = { color = "#ffb4ab", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "{{colors.primary.default.hex}}", style = "curl" } }
+"diagnostic.info" = { underline = { color = "{{colors.secondary.default.hex}}", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "{{colors.tertiary.default.hex}}", style = "curl" } }
+"diagnostic.error" = { underline = { color = "{{colors.error.default.hex}}", style = "curl" } }
+"ui.bufferline" = { fg = "{{ colors.on_surface_variant.default.hex }}", bg = "none" }
+"ui.bufferline.active" = { fg = "{{ colors.on_primary.default.hex }}", bg = "{{ colors.primary.default.hex }}", underline = { color = "{{ colors.primary.default.hex }}", style = "line" } }
+"ui.bufferline.background" = { bg = "none" }
 
-"hint" = "#3c4279"
-"info" = "#bdc2ff"
-"debug" = "#c4c4dd"
-"warning" = "#e7b9d6"
-"error" = "#ffb4ab"
+
+"hint" = "{{colors.primary_container.default.hex}}"
+"info" = "{{colors.primary.default.hex}}"
+"debug" = "{{colors.secondary.default.hex}}"
+"warning" = "{{colors.tertiary.default.hex}}"
+"error" = "{{colors.error.default.hex}}"
