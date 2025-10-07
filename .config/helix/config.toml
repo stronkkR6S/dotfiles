@@ -6,12 +6,15 @@ mouse = true                 # Enable mouse support
 bufferline = "multiple"      # Show multiple buffers in top line
 middle-click-paste = true    # Middle-click pastes clipboard
 auto-completion = true       # Show completions automatically
+path-completion = true       # Show path automatically 
 auto-format = true           # Format code on save if supported
 undercurl = true             # Squiggly underline for errors/warnings
 auto-info = true             # Show file info (lines, encoding, etc.)
 indent-heuristic = "tree-sitter"  # Guess indentation using tree-sitter
 end-of-line-diagnostics = "hint"  # Show subtle hints at end of line
 popup-border = "all"         # Draw borders around popups
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+
 
 [editor.cursor-shape]
 insert = "bar"       # Cursor is vertical bar in insert mode
@@ -27,7 +30,9 @@ right = ["diagnostics", "position", "separator", "total-line-numbers", "separato
 separator = ""                            # Separator between items
 mode.normal = "🟤 NORMAL"                  # Emoji + mode display
 mode.insert = "🟠 INSERT"
-mode.select = "🔴 SELECT"
+mode.select = "🔴 SELECT"                  
+diagnostics = ["warning", "error"]         #A list of severities which are displayed for the current buffer
+workspace-diagnostics = ["warning", "error"] # A list of severities which are displayed for the workspace 
 
 [editor.auto-pairs]  # Auto insert closing pairs
 '(' = ')'
@@ -39,7 +44,7 @@ mode.select = "🔴 SELECT"
 
 [editor.search]
 smart-case = true   # Case-insensitive unless uppercase is used
-wrap-around = true  # Search wraps around file
+wrap-around = true  # Whether the search should wrap after depleting the matches
 
 [editor.lsp]
 enable = true                       # Enable LSP
