@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.17.0-cachyos-r3 Kernel Configuration
+# Linux/x86 6.17.1-cachyos Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (Gentoo 14.3.1_p20250801 p4) 14.3.1 20250801"
 CONFIG_CC_IS_GCC=y
@@ -6613,3 +6613,21 @@ CONFIG_MEMTEST=y
 # end of Kernel hacking
 
 CONFIG_IO_URING_ZCRX=y
+
+#
+# Gentoo Linux
+#
+CONFIG_GENTOO_LINUX=y
+CONFIG_GENTOO_LINUX_UDEV=y
+CONFIG_GENTOO_LINUX_PORTAGE=y
+
+#
+# Support for init systems, system and service managers
+#
+CONFIG_GENTOO_LINUX_INIT_SCRIPT=y
+# CONFIG_GENTOO_LINUX_INIT_SYSTEMD is not set
+# end of Support for init systems, system and service managers
+
+# CONFIG_GENTOO_KERNEL_SELF_PROTECTION is not set
+CONFIG_GENTOO_PRINT_FIRMWARE_INFO=y
+# end of Gentoo Linux
