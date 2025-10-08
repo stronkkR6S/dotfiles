@@ -1,0 +1,83 @@
+theme = "helix"  # Color theme for Helix
+
+[editor]
+color-modes = true           # Enable true color (24-bit)
+mouse = true                 # Enable mouse support
+bufferline = "multiple"      # Show multiple buffers in top line
+middle-click-paste = true    # Middle-click pastes clipboard
+auto-completion = true       # Show suggestions automatically while typing
+completion-replace = true    # Replace the current word with the selected completion
+path-completion = true       # Suggest filesystem paths automatically
+auto-format = false          # Format code on save if supported
+undercurl = true             # Squiggly underline for errors/warnings
+auto-info = true             # Show file info (lines, encoding, etc.)
+indent-heuristic = "tree-sitter"  # Guess indentation using tree-sitter
+end-of-line-diagnostics = "hint"  # Show subtle hints at end of line
+popup-border = "all"         # Draw borders around popups
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+
+[editor.cursor-shape]
+insert = "bar"       # Cursor is vertical bar in insert mode
+select = "underline" # Cursor is underline in selection mode
+
+[editor.inline-diagnostics]
+cursor-line = "hint"  # Show inline error/warning hints on cursor line
+
+[editor.statusline]
+left = ["mode", "spinner"]                 # Left: mode + spinner
+center = ["file-name"]                     # Center: current file name
+right = ["diagnostics", "position", "separator", "total-line-numbers", "separator", "file-type"]  # Right: info and type
+separator = ""                            # Separator between items
+mode.normal = "🟤 NORMAL"                  # Emoji + mode display
+mode.insert = "🟠 INSERT"
+mode.select = "🔴 SELECT"                  
+diagnostics = ["warning", "error"]         #A list of severities which are displayed for the current buffer
+workspace-diagnostics = ["warning", "error"] # A list of severities which are displayed for the workspace 
+
+[editor.auto-pairs]  # Auto insert closing pairs
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[editor.search]
+smart-case = true   # Case-insensitive unless uppercase is used
+wrap-around = true  # Whether the search should wrap after depleting the matches
+
+[editor.lsp]
+enable = true                       # Enable LSP
+display-inlay-hints = true          # Show parameter/type hints inline
+display-messages = true             # Show LSP messages in popup
+auto-signature-help = true          # Show function signature while typing
+snippets = true                     # Enable snippets
+display-signature-help-docs = true  # Show docs in signature popup
+
+[editor.indent-guides]
+render = true      # Show vertical indent guides
+character = "|"    # Character for indent guide
+skip-levels = 1    # Skip first level for cleaner look
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]  # Collapse selection, keep primary clipboard
+X = ["extend_line_above", "extend_to_line_bounds"]      # Extend selection line up and full line
+G = "goto_last_line"                                    # Jump to last line
+"tab" = "goto_next_buffer"                              # Next buffer
+"S-tab" = "goto_previous_buffer"                        # Previous buffer
+d = "delete_selection_noyank"                           # Delete selection without copying
+c = "change_selection_noyank"                           # Change selection without copying
+
+[editor.soft-wrap]
+enable = true  # Wrap long lines visually
+
+[editor.file-picker]
+hidden = false  # Show hidden files in file picker
+
+[keys.insert]
+C-j = "move_char_left"   # Move cursor left in insert mode
+C-l = "move_char_right"  # Move cursor right
+
+[keys.normal.space]
+l = ":toggle lsp.display-inlay-hints"  # Toggle LSP inlay hints with space+l
