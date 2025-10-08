@@ -1,4 +1,4 @@
-use-grammars = { only = ["bash", "c", "xml"] }
+use-grammars = { only = ["bash", "c", "sway", "xml"] }
 
 [[language]]
 name = "c"
@@ -14,3 +14,9 @@ indent = { tab-width = 4, unit = "    " }
 name = "xml"
 auto-format = false
 indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "sway"
+file-types = [ { glob = "/home/ravish/.config/sway/config" } ]
+grammar = "sway"
+comment-token = "#"
