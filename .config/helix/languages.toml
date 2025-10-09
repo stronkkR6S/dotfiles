@@ -20,3 +20,6 @@ name = "sway"
 file-types = [ { glob = "/home/ravish/.config/sway/config" } ]
 grammar = "sway"
 comment-token = "#"
+
+[language-server]
+c = { command = "clangd", args = ["--completion-style=detailed", "--header-insertion=never"] }
