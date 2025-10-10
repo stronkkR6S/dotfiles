@@ -47,13 +47,14 @@ exec_always {
 ######## Auto Tiling
 exec autotiling -l 2
 # Brightness preset
-exec brightnessctl set 31%
+exec brightnessctl set 35%
 
 # Personal helper scripts
 #exec /home/ravish/script/music.sh
 exec /home/ravish/script/battery.sh
 exec /home/ravish/script/brightness.sh
 exec /home/ravish/script/volume.sh
+#exec /home/ravish/script/time.sh
 
 
 # Restart every reload
@@ -69,8 +70,8 @@ exec /usr/libexec/hyprpolkitagent
 seat seat0 xcursor_theme Bibata-Modern-Ice 24
 
 input "E-Signal USB Gaming Mouse Keyboard" {
-    accel_profile "flat"
-    pointer_accel 0
+    accel_profile "flat"       # raw-like movement
+    pointer_accel 0            # no scaling (1:1)
 }
 
 input type:touchpad {
@@ -87,6 +88,8 @@ input type:touchpad {
 
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_options "caps:escape"
+    repeat_delay 250 
+    repeat_rate 30
 }
 
 #############################
