@@ -187,7 +187,7 @@ bindsym $mod+Shift+Down  resize grow height 25 px
 
 # System keys
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 5%-
@@ -297,6 +297,8 @@ for_window [class="vlc"] opacity 1
 for_window [class="vlc"] blur disabled
 for_window [class="steam"] opacity 1 
 for_window [class="steam"] blur disable
+for_window [app_id="heroic"] opacity 1 
+for_window [app_id="heroic"] blur disable
 for_window [class="qemu-system-x86_64"] opacity 1 
 for_window [class="qemu-system-x86_64"] blur disable
 for_window [app_id="org.pwmt.zathura"] opacity 1
