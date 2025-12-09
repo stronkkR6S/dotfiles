@@ -75,5 +75,3 @@ CMD="qemu-system-x86_64 \
 echo "Launching QEMU with the following command:"
 echo "$CMD"
 eval $CMD
-
-
