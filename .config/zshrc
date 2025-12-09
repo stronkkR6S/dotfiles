@@ -21,8 +21,8 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 # │ 💡 Prompt                          │
 # └─────────────────────────────────────┘
 autoload -U colors && colors
-eval "$(starship init zsh)"
-#export PS1='[%{$fg[green]%}%n@%{$fg[blue]%}%m %{$fg[magenta]%}%~] %{$reset_color%}$ '
+#eval "$(starship init zsh)"
+export PS1='[%{$fg[green]%}%n@%{$fg[blue]%}%m %{$fg[magenta]%}%~] %{$reset_color%}$ '
 # ┌─────────────────────────────────────┐
 # │ 📜 History                         │
 # └─────────────────────────────────────┘
@@ -39,7 +39,7 @@ setopt autocd interactivecomments magicequalsubst nonomatch notify \
        numericglobsort promptsubst
 
 bindkey -e  # Emacs keybindings
-
+#bindkey -v  # Emacs keybindings
 # ┌─────────────────────────────────────┐
 # │ 🔌 Plugins with Zinit              │
 # └─────────────────────────────────────┘
@@ -78,18 +78,16 @@ eval "$(zoxide init zsh)"
 alias sudo='doas'
 alias ..='cd ..'
 alias cat='bat'
-alias pipes='pipes-rs -f 40'
 alias mkdir='mkdir -pv'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias grep='grep --color=auto'
 alias tr='tree -L 2 -h'
-#alias ls='lsd -X -l --icon=always'
+alias sl='ls'
 alias ls='eza -l --icons --sort=size '
 alias osage='birth=$(stat -c %W /); now=$(date +%s); diff=$((now - birth)); date -u -d "@$diff" +"%j days (%-m months, %-d days)"'
-alias update='sudo emerge --sync && sudo emerge -uDNa --with-bdeps=y @world'
-alias brokefetch='bash /home/ravish/down/h.sh'
+alias update='sudo emerge --sync && sudo emerge -uDNa --with-bdeps=y @world && sudo emerge --depclean'
 
 # ┌─────────────────────────────────────┐
 # │ 🔍 Fuzzy Jump with zoxide + fzf    │
@@ -104,7 +102,7 @@ i() {
 
 upload() {
     for file in "$@"; do
-        curl -F "file=@$file" https://0x0.st
+        curl -4 -F "file=@$file" https://0x0.st
     done
 }
 
