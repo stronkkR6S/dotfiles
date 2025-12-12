@@ -222,7 +222,7 @@ for_window [title="Firefox - Sharing Indicator"] kill
 for_window [app_id="nwg-look"] floating enable, resize set width 80 ppt height 80 ppt
 for_window [app_id="wofi"] border pixel 2
 for_window [app_id="org.telegram.desktop"] floating enable, resize set width 95 ppt height 95 ppt
-for_window [class="vesktop"] floating enable, resize set width 95 ppt height 95 ppt
+for_window [app_id="vesktop"] floating enable, resize set width 95 ppt height 95 ppt
 
 
 #############################
