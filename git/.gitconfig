@@ -42,3 +42,5 @@ graph = true
 [fetch]
 prune = true
 
+[alias]
+lg = log --oneline --graph --decorate --all
