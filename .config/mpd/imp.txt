@@ -1,9 +1,9 @@
 for debug never start mpd using init cause i does not give errors alway do manually "mpd"
 
 creating some folder and files is necessary:
-playlist
+playlist (directory)
 database (file)
-state
+state (file) 
 
 mpc client to interact with mpd 
 

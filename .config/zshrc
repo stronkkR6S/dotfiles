@@ -2,6 +2,10 @@
 # │ 🚀 Auto-launch for Hyprland/Sway   │
 # └─────────────────────────────────────┘
 #[ "$(tty)" = "/dev/tty1" ] && ! pidof -q Hyprland && dbus-run-session Hyprland
+# 
+# MPD daemon start (if no other user instance exists)
+[ ! -s ~/.config/mpd/pid ] && mpd
+
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
     export XDG_CURRENT_DESKTOP=sway
     export XDG_SESSION_DESKTOP=sway
@@ -75,7 +79,7 @@ eval "$(zoxide init zsh)"
 # ┌─────────────────────────────────────┐
 # │ 🏷 Aliases                         │
 # └─────────────────────────────────────┘
-alias sudo='doas'
+# alias sudo='doas'
 alias ..='cd ..'
 alias cat='bat'
 alias mkdir='mkdir -pv'
@@ -84,10 +88,11 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 alias grep='grep --color=auto'
 alias tr='tree -L 2 -h'
-alias sl='ls'
-alias ls='eza -l --icons --sort=size '
+# alias sl='ls'
+alias ls='eza -l --icons --sort=size'
 alias osage='birth=$(stat -c %W /); now=$(date +%s); diff=$((now - birth)); date -u -d "@$diff" +"%j days (%-m months, %-d days)"'
 alias update='sudo emerge --sync && sudo emerge -uDNa --with-bdeps=y @world && sudo emerge --depclean'
+alias xi='sudo xbps-install -S'
 
 # ┌─────────────────────────────────────┐
 # │ 🔍 Fuzzy Jump with zoxide + fzf    │
@@ -105,5 +110,3 @@ upload() {
         curl -4 -F "file=@$file" https://0x0.st
     done
 }
-
-### End of Zinit's installer chunk
