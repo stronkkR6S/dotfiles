@@ -69,9 +69,10 @@ exec /usr/libexec/hyprpolkitagent
 #############################
 seat seat0 xcursor_theme Bibata-Modern-Ice 24
 
-input "E-Signal USB Gaming Mouse Keyboard" {
-    accel_profile "flat"       # raw-like movement
-    pointer_accel 0            # no scaling (1:1)
+input type:pointer {
+    accel_profile "flat"
+    pointer_accel 0
+    scroll_factor 1.5
 }
 
 input type:touchpad {
