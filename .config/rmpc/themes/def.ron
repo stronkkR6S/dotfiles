@@ -262,7 +262,7 @@
         inactive_style: (),
     ),
     highlighted_item_style: (fg: "blue", modifiers: "Bold"),
-    current_item_style: (fg: "white", bg: "blue", modifiers: "Bold"),
+    current_item_style: (fg: "red", bg: "blue", modifiers: "Bold"),
     borders_style: (fg: "blue"),
     highlight_border_style: (fg: "red"),
     song_table_album_separator: None,
