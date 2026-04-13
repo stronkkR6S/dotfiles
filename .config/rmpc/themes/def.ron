@@ -21,21 +21,45 @@
         debug: (fg: "light_green", bg: "black"),
         trace: (fg: "magenta", bg: "black"),
     ),
+    // cava: (
+    //     bar_width: 2,
+    //     bar_spacing: 1,
+    //     orientation: Bottom,
+    //     bar_color: Gradient({
+    //           0: "#FF2D7D",
+    //          14: "#FF4FA3",
+    //          28: "#FF6EC7",
+    //          42: "#D67EFF",
+    //          56: "#9D8AFF",
+    //          70: "#6A9AFF",
+    //          84: "#38B6FF",
+    //         100: "#00D0E0",
+    //     }),
+    // ),
+    //
     cava: (
-        bar_width: 2,
-        bar_spacing: 1,
+
+        bar_width: 2, // width of a single bar in columns
+        bar_spacing: 1, // free space between bars in columns
+
         orientation: Bottom,
+
+        // A simple color gradient.
+        // This is a map where keys are percent values of the height where the
+        // color starts. After that it is linearly interpolated towards the next
+        // value. Keys must be between 0 and 100 and if the first or last key
+        // are not 0 and 100 respectively, the lowest and highest value will be
+        // used as 0 and 100.
+        // Only hex and RGB colors are supported here and your terminal must
+        // support them as well!
+        // rmpc does not support `horizontal_gradient` (yet?)
         bar_color: Gradient({
-              0: "#FF2D7D",
-             14: "#FF4FA3",
-             28: "#FF6EC7",
-             42: "#D67EFF",
-             56: "#9D8AFF",
-             70: "#6A9AFF",
-             84: "#38B6FF",
-            100: "#00D0E0",
-        }),
+            0: "#004e5c",
+            50: "#84d2e7",
+            100: "#b0edff"
+        })
     ),
+
     lyrics: (
         timestamp: false,
     ),
@@ -57,8 +81,6 @@
             direction: Horizontal,
             panes: [
                 (size: "100%", pane: Pane(Property(content: [(kind: Property(Widget(Volume)), style: (fg: "blue"))], align: Right))),
-                (size: "3", pane: Pane(Property(content: [(kind: Property(Status(Volume)), style: (fg: "blue"))], align: Right))),
-                (size: "1", pane: Pane(Property(content: [(kind: Text("%"), style: (fg: "blue"))]))),
             ]
         ),
         "elapsed_and_bitrate": Pane(Property(
