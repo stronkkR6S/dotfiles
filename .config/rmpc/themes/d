@@ -5,6 +5,7 @@
     draw_borders: false,
     show_song_table_header: true,
     background_color: "black",
+    // highlight_color: "black",   // dark subtle highlight
     default_album_art_path: None,
     header_background_color: None,
     modal_background_color: None,
@@ -262,7 +263,7 @@
         inactive_style: (),
     ),
     highlighted_item_style: (fg: "blue", modifiers: "Bold"),
-    current_item_style: (fg: "white", bg: "blue", modifiers: "Bold"),
+    current_item_style: (fg: "black", bg: "blue", modifiers: "Bold"),
     borders_style: (fg: "blue"),
     highlight_border_style: (fg: "red"),
     song_table_album_separator: None,
@@ -294,5 +295,4 @@
         ),
     ],
     header: (rows: []),
-)
-
+) whole theme config
